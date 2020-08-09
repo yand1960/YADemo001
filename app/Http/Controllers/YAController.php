@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 class YAController
 {
-    public function hi() {
+    public function index() {
         return view ("YA/hi");
     }
 }
