@@ -23,7 +23,7 @@ Route::get('/nz/hello', function () {
 Route::get("/ya/hello", function(){
     return "Hello, I am YA!";
 });
-=======
+
 Route::get("/vs/hello", function (){
     return 'Hello, Vladimir';
 });
