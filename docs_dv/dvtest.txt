@@ -7,6 +7,6 @@ User Story:
 Tables:
 
 group: {id, name}
-concert: {id, date, group_id}
+event: {id, date, group_id}
 client: {id, name}
-order: {id, client_id, group_id, concert_id}
+appointments: {id, client_id, group_id, event_id}
