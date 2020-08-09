@@ -27,7 +27,6 @@ create table if not exists events -- список концертов
 
 create table if not exists client -- список зрителей
  (  id serial not null primary key,
-    date datetime not null,
     name varchar(40) not null default ''
 );
 
