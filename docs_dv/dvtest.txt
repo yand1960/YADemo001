@@ -1,0 +1,12 @@
+User Story:
+
+Как фанат музыки, я хотел бы видеть
+список доступных исполнителей и видеть даты их концертов,
+чтобы иметь возможность забронировать билет.
+
+Tables:
+
+group: {id, name}
+event: {id, date, group_id}
+client: {id, name}
+appointments: {id, client_id, group_id, event_id}
