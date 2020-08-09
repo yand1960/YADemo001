@@ -10,17 +10,3 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-.idea
-/.editorconfig
-/.env.example
-/.gitattributes
-/.styleci.yml
-/artisan
-/composer.json
-/composer.lock
-/package.json
-/package-lock.json
-/phpunit.xml
-/README.md
-/server.php
-/webpack.mix.js
