@@ -17,14 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/vs/hello", function (){
-    return 'Hello, Vladimir';
+Route::get('/nz/hello', function () {
+    return "Hello, I am NZ!";
 });
-Route::get('/dk/hello', function () {
-    return "HEllO, I AM DINAR!";
-});
-
-Route::get('/derevoxp', function () {
-    echo("Hello, DerevoXP!");
-});
-
