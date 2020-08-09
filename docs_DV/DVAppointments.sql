@@ -1,17 +1,12 @@
-User Story:
+-- Tables:
+--
+-- Имя базы данных: 	a0438483_dvproject
+-- Адрес хоста: 	derevoxp.ru
+-- Пользователь: 	a0438483_dvproject
+-- Пароль: 	mama!myla!ramu
 
-Как фанат музыки, я хотел бы видеть
-список доступных исполнителей и видеть даты их концертов,
-чтобы иметь возможность забронировать билет.
 
-Tables:
-
-Имя базы данных: 	a0438483_dvproject
-Адрес хоста: 	derevoxp.ru
-Пользователь: 	a0438483_dvproject
-Пароль: 	mama!myla!ramu
-
-////////////////////////////////////////////
+create database if not exists dvappointments;
 
 create table if not exists groups -- список групп
 (
