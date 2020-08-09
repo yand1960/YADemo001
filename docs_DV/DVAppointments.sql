@@ -5,6 +5,9 @@
 -- Пользователь: 	a0438483_dvproject
 -- Пароль: 	mama!myla!ramu
 
+
+create database if not exists dvappointments;
+
 create table if not exists groups -- список групп
 (
     id serial not null primary key,
