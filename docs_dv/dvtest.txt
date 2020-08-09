@@ -13,25 +13,26 @@ Tables:
 
 ////////////////////////////////////////////
 
-create table if not exists group -- список исполнителей
- (  id autoincrement not null primary key,
+create table if not exists groups -- список групп
+(
+    id serial not null primary key,
     name varchar(40) not null default ''
 );
 
-create table if not exists event -- список концертов
- (  id autoincrement not null primary key,
+create table if not exists events -- список концертов
+ (  id serial not null primary key,
     date datetime not null,
     group_id varchar(40) not null default ''
 );
 
 create table if not exists client -- список зрителей
- (  id autoincrement not null primary key,
+ (  id serial not null primary key,
     date datetime not null,
     name varchar(40) not null default ''
 );
 
 create table if not exists appointments -- список заказов
- (  id autoincrement not null primary key,
+ (  id serial not null primary key,
     client_id integer not null,
     event_id varchar(40) not null
 );
