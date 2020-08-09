@@ -6,10 +6,10 @@ User Story:
 
 Tables:
 
-group: {id, name}
-event: {id, date, group_id}
-client: {id, name}
-appointments: {id, client_id, event_id}
+Имя базы данных: 	a0438483_dvproject
+Адрес хоста: 	derevoxp.ru
+Пользователь: 	a0438483_dvproject
+Пароль: 	mama!myla!ramu
 
 ////////////////////////////////////////////
 
