@@ -20,6 +20,10 @@ Route::get('/', function () {
 Route::get("/vs/hello", function (){
     return 'Hello, Vladimir';
 });
+Route::get('/dk/hello', function () {
+    return "HEllO, I AM DINAR!";
+});
+
 Route::get('/derevoxp', function () {
     echo("Hello, DerevoXP!");
 });
