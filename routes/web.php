@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::get("/ya/hello", function(){
     return "Hello, I am YA!";
 });
+=======
+Route::get('/derevoxp', function () {
+    echo("Hello, DerevoXP!");
+});
+
+>>>>>>> origin/master
