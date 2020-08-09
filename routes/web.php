@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get("/ya/hello", function(){
+    return "Hello, I am YA!";
+});
+=======
+Route::get("/vs/hello", function (){
+    return 'Hello, Vladimir';
+});
+Route::get('/dk/hello', function () {
+    return "HEllO, I AM DINAR!";
+});
+
 Route::get('/derevoxp', function () {
     echo("Hello, DerevoXP!");
 });
