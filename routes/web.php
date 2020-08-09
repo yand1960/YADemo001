@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('/nz/hello', function () {
     return "Hello, I am NZ!";
+});
 
 Route::get("/ya/hello", function(){
     return "Hello, I am YA!";
