@@ -35,3 +35,6 @@ Route::get('/derevoxp', function () {
     echo("Hello, DerevoXP!");
 });
 
+Route::get("ah/hello", function (){
+    return "Hello, I am AH!";
+});
