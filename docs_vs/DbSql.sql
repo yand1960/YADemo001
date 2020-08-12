@@ -13,8 +13,6 @@ CREATE TABLE `Events` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`eventName` VARCHAR(30) NOT NULL,
 	`description` VARCHAR(255) NOT NULL,
-	`created_at` DATETIME NOT NULL,
-	`updated_at` DATETIME NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
