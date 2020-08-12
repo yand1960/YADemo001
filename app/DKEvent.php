@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DKEvent extends Model
 {
+    protected $table = 'events';
     protected $connection = 'DiKhSQL';
     protected $primaryKey = 'id';
     protected $name = '';
