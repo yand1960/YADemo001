@@ -8,12 +8,31 @@
     <title>Ивенты</title>
 
     <script>
+
+        function sortLight() {
+            document.getElementById("{{$sort}}").style.backgroundColor = 'gray';
+        }
+
         function bindEvent(e) {
             console.log('bind - ok! id = ', e);
         }
+
     </script>
 
     <style>
+
+        .sort{
+            display: inline-block;
+            border: 1px solid black;
+            width: 150px;
+            height: 30px;
+            text-align: center;
+            color: black;
+        }
+
+        a{
+            text-decoration: none;
+        }
 
         .event{
             display: block;
@@ -27,7 +46,8 @@
 
 <h1>Список концертов</h1>
 
-
+<div class="sort" id="dataSort"><a href="/derevoxp/sortByDate">Sort by date</a></div>
+<div class="sort" id="nameSort"><a href="/derevoxp/sortByName">Sort by name</a></div>
 
 @foreach($data as $p)
     <div class="event" id="e{{$p['id']}}">
@@ -38,6 +58,10 @@
         <p>------------------------------</p>
     </div>
 @endforeach
+
+<script>
+    sortLight();
+</script>
 
 </body>
 </html>

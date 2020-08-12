@@ -37,6 +37,8 @@ Route::get('/dk/hello', function () {
 });
 
 Route::get('/derevoxp', "DVController@getEvent");
+Route::get('/derevoxp/sortByDate', "DVController@sortEventByData");
+Route::get('/derevoxp/sortByName', "DVController@sortEventByName");
 
 Route::get("ah/hello", function (){
     return "Hello, I am AH!";
