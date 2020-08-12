@@ -1,5 +1,5 @@
 CREATE SCHEMA `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb`
+USE `mydb`;
 
 CREATE TABLE `Appointments` (
 	`id` INT NOT NULL AUTO_INCREMENT,
