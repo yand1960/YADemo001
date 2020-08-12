@@ -11,7 +11,7 @@ CREATE TABLE `Appointments` (
 
 CREATE TABLE `Events` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-	`eventName` INT(30) NOT NULL,
+	`eventName` VARCHAR(30) NOT NULL,
 	`description` VARCHAR(255) NOT NULL,
 	`created_at` DATETIME NOT NULL,
 	`updated_at` DATETIME NOT NULL,
