@@ -27,6 +27,8 @@
 
 <h1>Список концертов</h1>
 
+
+
 @foreach($data as $p)
     <div class="event" id="e{{$p['id']}}">
         <p>{{$p['date']}}
