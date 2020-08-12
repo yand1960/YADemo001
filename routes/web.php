@@ -21,6 +21,8 @@ Route::get('/nz/hello', function () {
     return "Hello, I am NZ!";
 });
 
+Route::get('/nz/test/{word}', 'NZController@test');
+
 Route::get("/ya/hello", function(){
     return "Hello, I am YA!";
 });
@@ -38,3 +40,5 @@ Route::get('/derevoxp', function () {
 Route::get("ah/hello", function (){
     return "Hello, I am AH!";
 });
+
+Route::get("/ya/hi","YAController@index");
