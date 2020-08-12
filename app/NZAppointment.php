@@ -6,9 +6,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NZEvent extends Model
+class NZAppointment extends Model
 {
-    protected $table = 'events';
+    protected $table = 'appointments';
     protected $connection = 'nz_mysql';
     public $timestamps = false;
 }
