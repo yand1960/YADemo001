@@ -33,9 +33,7 @@ Route::get('/dk/hello', function () {
     return "HEllO, I AM DINAR!";
 });
 
-Route::get('/derevoxp', function () {
-    echo("Hello, DerevoXP!");
-});
+Route::get('/derevoxp', "DVController@getEvent");
 
 Route::get("ah/hello", function (){
     return "Hello, I am AH!";
