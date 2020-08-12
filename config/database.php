@@ -83,7 +83,7 @@ return [
             ]) : [],
         ],
 
-        'cre' => [
+        'DiKhSQL' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
