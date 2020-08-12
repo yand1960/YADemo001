@@ -51,9 +51,8 @@
 
 @foreach($data as $p)
     <div class="event" id="e{{$p['id']}}">
-        <p>{{$p['date']}}
-            <b>{{$p['group_id']}}</b>
-        </p>
+        <input type="datetime-local" value="{{str_replace(' ', 'T', $p['date'])}}">
+        <b>{{$p['group_id']}}</b>
         <button onclick="bindEvent({{$p['id']}})">Забронировать</button>
         <p>------------------------------</p>
     </div>
