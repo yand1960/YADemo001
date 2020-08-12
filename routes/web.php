@@ -22,6 +22,7 @@ Route::get('/nz/hello', function () {
 });
 
 Route::get('/nz/test/{word}', 'NZController@test');
+Route::get('/nz/events', 'NZController@events');
 
 Route::get("/ya/hello", function(){
     return "Hello, I am YA!";

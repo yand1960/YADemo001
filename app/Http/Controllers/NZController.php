@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 
 
 use App\NZEvent;
+use Illuminate\Http\Request;
+
 
 class NZController
 {
@@ -15,4 +17,10 @@ class NZController
         var_dump($events);
         return view('NZ/test', ["word"=>$word]);
     }
+
+    public function events() {
+        $events = NZEvent::select('name', 'description', 'created_at')->get();
+        return view('NZ/events', ["events"=>$events]);
+    }
+
 }
