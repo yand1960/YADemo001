@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class NZEvent extends Model
 {
+    protected $table = 'events';
     protected $connection = 'nz_mysql';
-    protected $primaryKey = 'ProductID';
     public $timestamps = false;
 }
