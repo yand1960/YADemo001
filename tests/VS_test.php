@@ -4,7 +4,7 @@
 namespace Tests;
 
 
-class VS_test
+class VS_test extends TestCase
 {
 
 }
