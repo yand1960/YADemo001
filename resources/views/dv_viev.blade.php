@@ -9,8 +9,22 @@
 </head>
 <body>
 
+<script>
+
+    function bindEvent() {
+        console.log('bind - ok!');
+    }
+
+</script>
+
+<h1>Список концертов</h1>
+
 @foreach($data as $p)
-    {{$p}}<br/>
+    {{$p['date']}}
+    {{$p['group_id']}}
+    <button onclick="bindEvent()">Забронировать</button>
+    <br/>
+    <br/>
 @endforeach
 
 </body>
