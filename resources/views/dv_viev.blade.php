@@ -9,7 +9,9 @@
 </head>
 <body>
 
-
+@foreach($data as $p)
+    {{$p}}<br/>
+@endforeach
 
 </body>
 </html>
