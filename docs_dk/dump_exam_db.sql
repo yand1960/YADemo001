@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema exam_db
+-- Schema DiKhSQL
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema exam_db
+-- Schema DiKhSQL
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `exam_db` DEFAULT CHARACTER SET utf8 ;
-USE `exam_db` ;
+CREATE SCHEMA IF NOT EXISTS `DiKhSQL` DEFAULT CHARACTER SET utf8 ;
+USE `DiKhSQL` ;
 
 -- -----------------------------------------------------
--- Table `exam_db`.`Events`
+-- Table `DiKhSQL`.`Events`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `exam_db`.`Events` ;
+DROP TABLE IF EXISTS `DiKhSQL`.`Events` ;
 
 CREATE TABLE IF NOT EXISTS `exam_db`.`Events` (
   `id` INT NULL,
@@ -31,9 +31,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `exam_db`.`Appointments`
+-- Table `DiKhSQL`.`Appointments`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `exam_db`.`Appointments` ;
+DROP TABLE IF EXISTS `DiKhSQL`.`Appointments` ;
 
 CREATE TABLE IF NOT EXISTS `exam_db`.`Appointments` (
   `idAppointments` INT NOT NULL,
