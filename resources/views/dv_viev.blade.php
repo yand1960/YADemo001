@@ -8,12 +8,35 @@
     <title>Ивенты</title>
 
     <script>
+
         function bindEvent(e) {
             console.log('bind - ok! id = ', e);
         }
+
+        // function sortByDate() {
+        //     let url = '/derevoxp/sortByDate';
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open('GET', url);
+        //     xhr.send();
+        //     console.log('sortByDate')
+        //
+        // }
+        //
+        // function sortByName() {
+        //     let url = '/derevoxp/sortByName';
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open('GET', url);
+        //     xhr.send();
+        //     console.log('sortByName')
+        // }
+
     </script>
 
     <style>
+
+        a{
+            text-decoration: none;
+        }
 
         .event{
             display: block;
@@ -27,7 +50,8 @@
 
 <h1>Список концертов</h1>
 
-
+<a href="/derevoxp/sortByDate">Sort by date</a>
+<a href="/derevoxp/sortByName">Sort by name</a>
 
 @foreach($data as $p)
     <div class="event" id="e{{$p['id']}}">
