@@ -63,6 +63,26 @@ return [
             ]) : [],
         ],
 
+        'DV_mysql' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', 'derevoxp.ru'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'a0438483_dvproject'),
+            'username' => env('DB_USERNAME', 'a0438483_dvproject'),
+            'password' => env('DB_PASSWORD', 'mama!myla!ramu'),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
