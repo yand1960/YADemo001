@@ -40,3 +40,7 @@ Route::get("ah/hello", function (){
 });
 
 Route::get("/ya/hi","YAController@index");
+
+Route::get("/vs/test","VSController@bladeTest");
+
+Route::get("/vs/testEvent","VSController@testEvent");
