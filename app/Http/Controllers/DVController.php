@@ -18,13 +18,13 @@ class DVController
     public function sortEventByData(Request $request)
     {
         $events = \App\DVEvent::all()->sortBy('date');
-        return view('dv_viev', ['data' => $events, 'sort' => 'dataSort']);
+        return view('dv_viev', ['data' => $events, 'sortData' => 'activeSort', 'sortName' => '']);
     }
 
     public function sortEventByName(Request $request)
     {
         $events = \App\DVEvent::all()->sortBy('group_id');
-        return view('dv_viev', ['data' => $events, 'sort' => 'nameSort']);
+        return view('dv_viev', ['data' => $events, 'sortName' => 'activeSort', 'sortData' => '']);
     }
 
 

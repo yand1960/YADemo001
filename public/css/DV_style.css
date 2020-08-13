@@ -1,0 +1,17 @@
+.sort{
+    display: inline-block;
+    border: 1px solid black;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+}
+
+.event{
+    display: block;
+    color: green;
+}
