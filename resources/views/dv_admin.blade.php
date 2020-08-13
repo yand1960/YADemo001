@@ -10,17 +10,25 @@
 
 </head>
 <body>
+<h1>Список концертов (admin)</h1>
 
-<h1>Список концертов</h1>
 
-<div class="sort" id="{{$sortData ?? ''}}"><a href="/derevoxp/sortByDate">Sort by date</a></div>
-<div class="sort" id="{{$sortName ?? ''}}"><a href="/derevoxp/sortByName">Sort by name</a></div>
+<form method="POST">
+    @csrf
+    <input name="newDataSet"  id="newDataSet" type="datetime-local"/><br/>
+    <input name="newGroupIdSet"  id="newGroupIdSet"/><br/>
+    <input type="submit" value="Добавить" /><br/>
+</form>
+
+{{$indicator ?? ''}}
+
+<br/>
+<br/>
 
 @foreach($data as $p)
-    <div class="event" id="e{{$p['id']}}">
+    <div class="event">
         <input type="datetime-local" value="{{str_replace(' ', 'T', $p['date'])}}">
         <b>{{$p['group_id']}}</b>
-        <button onclick="bindEvent({{$p['id']}})">Забронировать</button>
         <p>------------------------------</p>
     </div>
 @endforeach

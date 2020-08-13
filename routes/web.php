@@ -36,9 +36,10 @@ Route::get('/dk/hello', function () {
     return "HEllO, I AM DINAR!";
 });
 
-Route::get('/derevoxp', "DVController@getEvent");
-Route::get('/derevoxp/sortByDate', "DVController@sortEventByData");
-Route::get('/derevoxp/sortByName', "DVController@sortEventByName");
+Route::get('/derevoxp', "DVController@getEvent"); // список событий, доступных для заказа
+Route::get('/derevoxp/sortByDate', "DVController@sortEventByData"); // сортировка по дате
+Route::get('/derevoxp/sortByName', "DVController@sortEventByName"); // сортировка по имени
+Route::post('/derevoxp/admin', "DVController@setEvent"); // для добавления новых событий (админ)
 
 Route::get("ah/hello", function (){
     return "Hello, I am AH!";
