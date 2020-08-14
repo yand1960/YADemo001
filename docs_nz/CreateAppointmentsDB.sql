@@ -9,20 +9,12 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 
 create database if not exists nzappointments;
 
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+USE `nzappointments` ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`events`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`events` (
+CREATE TABLE IF NOT EXISTS`events` (
   `idevents` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `description` VARCHAR(2048) NOT NULL,
@@ -33,20 +25,15 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`appointments`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`appointments` (
-  `idappointments` INT NOT NULL,
-  `appointmentName` VARCHAR(45) NOT NULL,
-  `date` DATETIME NOT NULL,
-  `events_idevents` INT NOT NULL,
-  `userName` VARCHAR(256) NOT NULL,
-  PRIMARY KEY (`idappointments`, `events_idevents`),
-  INDEX `fk_appointments_events_idx` (`events_idevents` ASC) VISIBLE,
-  CONSTRAINT `fk_appointments_events`
-    FOREIGN KEY (`events_idevents`)
-    REFERENCES `mydb`.`events` (`idevents`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `appointments`
+(
+    `idappointments`  INT          NOT NULL,
+    `appointmentName` VARCHAR(45)  NOT NULL,
+    `date`            DATETIME     NOT NULL,
+    `events_idevents` INT          NOT NULL,
+    `userName`        VARCHAR(256) NOT NULL,
+    PRIMARY KEY (`idappointments`, `events_idevents`)
+);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

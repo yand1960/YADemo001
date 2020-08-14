@@ -57,7 +57,7 @@ Route::get("ah/hello", function (){
 
 Route::get("/ya/hi","YAController@index");
 
-Route::get("/dk/event","DKController@getEvent");
+Route::get("/dk/event","DKController@testEvent");
 
 Route::get("/vs/test","VSController@bladeTest");
 

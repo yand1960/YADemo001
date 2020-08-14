@@ -14,13 +14,12 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `ah` DEFAULT CHARACTER SET utf8 ;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Events`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Events` (
+CREATE TABLE IF NOT EXISTS `ah`.`Events` (
   `idevents` INT NOT NULL,
   `Name` VARCHAR(45) NULL,
   `decription` VARCHAR(2048) NULL,
@@ -33,21 +32,14 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`appoitments`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`appoitments` (
+CREATE TABLE IF NOT EXISTS `ah`.`appoitments` (
   `idappoitments` INT NOT NULL,
   `appoitmentName` VARCHAR(45) NULL,
   `date` DATETIME NULL,
   `events_idevents` INT NULL,
   `users_idusers` INT NULL,
   `appoitmentscol` VARCHAR(45) NULL,
-  `Events_idevents` INT NOT NULL,
-  PRIMARY KEY (`idappoitments`, `Events_idevents`),
-  INDEX `fk_appoitments_Events_idx` (`Events_idevents` ASC) VISIBLE,
-  CONSTRAINT `fk_appoitments_Events`
-    FOREIGN KEY (`Events_idevents`)
-    REFERENCES `mydb`.`Events` (`idevents`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idappoitments`, `Events_idevents`))
 ENGINE = InnoDB;
 
 

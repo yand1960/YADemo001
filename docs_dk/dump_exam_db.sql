@@ -1,6 +1,8 @@
 
 create database if not exists dkappointments;
 
+USE dkappointments;
+
 CREATE TABLE `Appointments` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`User` VARCHAR(40) NOT NULL,
