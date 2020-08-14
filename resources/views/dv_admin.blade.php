@@ -10,28 +10,38 @@
 
 </head>
 <body>
-<h1>Список концертов (admin)</h1>
 
+<a href="/derevoxp">home</a>
 
-<form method="POST">
-    @csrf
-    <input name="newDataSet"  id="newDataSet" type="datetime-local"/><br/>
-    <input name="newGroupIdSet"  id="newGroupIdSet"/><br/>
-    <input type="submit" value="Добавить" /><br/>
-</form>
+@if ($token == 'admin')
 
-{{$indicator ?? ''}}
+    <h1>Список концертов (admin)</h1>
 
-<br/>
-<br/>
+    <form method="POST" action="/derevoxp/admin/set">
+        @csrf
+        <input name="newDataSet" id="newDataSet" type="datetime-local"/><br/>
+        <input name="newGroupIdSet" id="newGroupIdSet"/><br/>
+        <input type="submit" value="Добавить"/><br/>
+    </form>
 
-@foreach($data as $p)
-    <div class="event">
-        <input type="datetime-local" value="{{str_replace(' ', 'T', $p['date'])}}">
-        <b>{{$p['group_id']}}</b>
-        <p>------------------------------</p>
-    </div>
-@endforeach
+    {{$indicator ?? ''}}
+
+    <br/>
+    <br/>
+
+    @foreach($data as $p)
+        <div class="event">
+            <input type="datetime-local" value="{{str_replace(' ', 'T', $p['date'])}}">
+            <b>{{$p['group_id']}}</b>
+            <p>------------------------------</p>
+        </div>
+    @endforeach
+
+@else
+
+    <h1>Добавление событий доступно только администратору!</h1>
+
+@endif
 
 <script src="{{ asset('script/DV_script.js') }}"></script>
 
