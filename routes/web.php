@@ -16,3 +16,50 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/nz/hello', function () {
+    return "Hello, I am NZ!";
+});
+
+Route::get('/nz/test/{word}', 'NZController@test');
+Route::get('/nz/events', 'NZController@events');
+Route::get('/nz/events/desc', 'NZController@eventsDesc');
+Route::get('/nz/events/asc', 'NZController@eventsAsc');
+
+Route::get("/ya/hello", function(){
+    return "Hello, I am YA!";
+});
+Route::get("/vs/hello", function (){
+    return 'Hello, Vladimir';
+});
+Route::get('/dk/hello', function () {
+    return "HEllO, I AM DINAR!";
+});
+
+/////////////// DEREVOXP ///////////////
+
+Route::get('/derevoxp', "DVController@getEvent"); // список событий, доступных для заказа
+Route::get('/derevoxp/test', "DVController@showTest"); // для теста
+Route::get('/derevoxp/register', "DVController@register"); // форма регистрации
+Route::get('/derevoxp/logout', "DVController@logout"); // выйти из аккаунта
+Route::post('/derevoxp/register/send/', "DVController@registerSend"); // регистрируем юзера, даём ему токен
+Route::get('/derevoxp/sortByDate', "DVController@sortEventByData"); // сортировка по дате
+Route::get('/derevoxp/sortByName', "DVController@sortEventByName"); // сортировка по имени
+Route::get('derevoxp/admin', "DVController@setEvent"); // старт админки
+Route::post('/derevoxp/admin/set/', "DVController@setEvent"); // для добавления новых событий методом POST (админ)
+Route::get('/derevoxp/admin/delete/{id}', "DVController@deleteEvent"); // для удаления событий
+
+/////////////// END FOR DEREVOXP ///////////////
+
+Route::get("ah/hello", function (){
+    return "Hello, I am AH!";
+});
+
+Route::get("/ya/hi","YAController@index");
+
+Route::get("/dk/event","DKController@getEvent");
+
+Route::get("/vs/test","VSController@bladeTest");
+
+Route::get("/vs/testEvent","VSController@testEvent");
+
