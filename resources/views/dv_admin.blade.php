@@ -11,16 +11,17 @@
 </head>
 <body>
 
-<a href="/derevoxp">home</a>
+<a class="nav" href="/derevoxp">home</a>
 
 @if ($token == 'admin')
 
     <h1>Список концертов (admin)</h1>
 
-    <form method="POST" action="/derevoxp/admin/set">
+    <form class="container" method="POST" action="/derevoxp/admin/set">
         @csrf
+        <p>Добавьте событие</p>
         <input name="newDataSet" id="newDataSet" type="datetime-local"/><br/>
-        <input name="newGroupIdSet" id="newGroupIdSet"/><br/>
+        <input name="newGroupIdSet" id="newGroupIdSet" placeholder="Введите название группы"/><br/>
         <input type="submit" value="Добавить"/><br/>
     </form>
 
@@ -29,13 +30,15 @@
     <br/>
     <br/>
 
-    @foreach($data as $p)
-        <div class="event">
-            <input type="datetime-local" value="{{str_replace(' ', 'T', $p['date'])}}">
-            <b>{{$p['group_id']}}</b>
-            <p>------------------------------</p>
-        </div>
-    @endforeach
+    <div class="container">
+        @foreach($data as $p)
+            <div class="event">
+                <input type="datetime-local" value="{{str_replace(' ', 'T', $p['date'])}}">
+                <b>{{$p['group_id']}}</b>
+                <button onclick="deleteEvent({{$p['id']}})">Delete</button>
+            </div>
+        @endforeach
+    </div>
 
 @else
 
