@@ -53,3 +53,5 @@ Route::get("/vs/test","VSController@bladeTest");
 
 Route::get("/vs/testEvent","VSController@testEvent");
 
+Route::get("/vs/testSummary","VSController@testSummary");
+
