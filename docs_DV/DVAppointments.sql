@@ -22,7 +22,9 @@ create table if not exists events -- список концертов
 
 create table if not exists client -- список зрителей
  (  id serial not null primary key,
-    name varchar(40) not null default ''
+    login varchar(40) not null default '',
+    pass varchar(40) not null default '',
+    token varchar(40) not null default ''
 );
 
 create table if not exists appointments -- список заказов

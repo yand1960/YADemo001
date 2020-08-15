@@ -1,17 +1,53 @@
 .sort{
     display: inline-block;
     border: 1px solid black;
-    width: 150px;
-    height: 30px;
+    width: 100px;
+    height: 20px;
     text-align: center;
     color: black;
+    margin-bottom: 20px;
+}
+
+/*body {*/
+/*   background-color: gray;*/
+/*}*/
+
+.nav{
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    border: 1px solid black;
+    padding: 3px 10px;
 }
 
 a{
     text-decoration: none;
 }
 
+.container{
+    width: 315px;
+    display: flex;
+    flex-direction: column;
+}
+
 .event{
-    display: block;
+    display: flex;
+    flex-direction: column;
     color: green;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+}
+
+.event * {
+    margin-bottom: 10px;
+}
+
+.event h2 {
+    margin-top: 0;
+}
+
+.event .groupTitle {
+    display: inline;
 }
