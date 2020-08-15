@@ -32,9 +32,23 @@ Route::get("/ya/hello", function(){
 Route::get("/vs/hello", function (){
     return 'Hello, Vladimir';
 });
+
+//Dinar Khalfin/////////
 Route::get('/dk/hello', function () {
     return "HEllO, I AM DINAR!";
 });
+
+Route::get('/dk/', 'DKController@index');
+Route::get('/dk/DKcategories', 'DKController@DKcategories');
+Route::get('/dk/{DKcategory}', 'DKController@DKcategory');
+Route::get('/dk/DKappointment/{event?}', 'DKController@DKappointment');
+Route::get('/dk/DKappointment/phpexam', 'DKController@DKphpexam');
+
+//Route::get('/dk/appointments/{event}', 'DKController@appointment');
+
+Route::get("/dk/event","DKController@getEvent");
+
+//Dinar Khalfin/////////
 
 /////////////// DEREVOXP ///////////////
 
@@ -56,8 +70,6 @@ Route::get("ah/hello", function (){
 });
 
 Route::get("/ya/hi","YAController@index");
-
-Route::get("/dk/event","DKController@getEvent");
 
 Route::get("/vs/test","VSController@bladeTest");
 
