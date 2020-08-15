@@ -65,9 +65,7 @@ Route::get('/derevoxp/admin/delete/{id}', "DVController@deleteEvent"); // для
 
 /////////////// END FOR DEREVOXP ///////////////
 
-Route::get("ah/hello", function (){
-    return "Hello, I am AH!";
-});
+Route::get('/ah/hello', "AHConroller@testSummary");
 
 Route::get("/ya/hi","YAController@index");
 
