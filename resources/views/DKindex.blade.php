@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Интернет Магазин: Главная</title>
+    <title>Планировщик мероприятий: Главная</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <script src="/js/jquery.min.js"></script>
@@ -42,7 +42,7 @@
 
 <div class="container">
     <div class="starter-template">
-        <h1>Все товары</h1>
+        <h1>Все мероприятия</h1>
         <form method="GET" action="">
             <div class="filters row">
                 <div class="col-sm-6 col-md-3">

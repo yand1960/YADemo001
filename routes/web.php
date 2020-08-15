@@ -38,7 +38,7 @@ Route::get('/dk/hello', function () {
     return "HEllO, I AM DINAR!";
 });
 
-Route::get('/dk/', 'DKController@index');
+Route::get('/dk/', 'DKController@DKindex');
 Route::get('/dk/DKcategories', 'DKController@DKcategories');
 Route::get('/dk/{DKcategory}', 'DKController@DKcategory');
 Route::get('/dk/DKappointment/{event?}', 'DKController@DKappointment');

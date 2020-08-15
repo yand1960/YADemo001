@@ -9,7 +9,7 @@ class DKController extends Controller
 {
 
 
-    public function index()
+    public function DKindex()
     {
         return view('DKindex');
     }
