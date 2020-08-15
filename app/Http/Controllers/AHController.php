@@ -18,7 +18,7 @@ class AHController
     {
 //        $summary = DB::table('appointments')->select('*')
 //            ->get();
-        $appointments = \App\VSevent::find(1)->appointments;
+//        $appointments = \App\VSevent::find(1)->appointments;
         $events = \App\AHevent::find(1)->get();
 //        $events = \App\VSevent::where('id','1')->get();
         echo($events);
