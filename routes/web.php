@@ -32,9 +32,23 @@ Route::get("/ya/hello", function(){
 Route::get("/vs/hello", function (){
     return 'Hello, Vladimir';
 });
+
+//Dinar Khalfin/////////
 Route::get('/dk/hello', function () {
     return "HEllO, I AM DINAR!";
 });
+
+Route::get('/dk/', 'DKController@DKindex');
+Route::get('/dk/DKcategories', 'DKController@DKcategories');
+Route::get('/dk/{DKcategory}', 'DKController@DKcategory');
+Route::get('/dk/DKappointment/{event?}', 'DKController@DKappointment');
+Route::get('/dk/DKappointment/phpexam', 'DKController@DKphpexam');
+
+//Route::get('/dk/appointments/{event}', 'DKController@appointment');
+
+Route::get("/dk/event","DKController@getEvent");
+
+//Dinar Khalfin/////////
 
 /////////////// DEREVOXP ///////////////
 
@@ -51,15 +65,12 @@ Route::get('/derevoxp/admin/delete/{id}', "DVController@deleteEvent"); // для
 
 /////////////// END FOR DEREVOXP ///////////////
 
-Route::get("ah/hello", function (){
-    return "Hello, I am AH!";
-});
+Route::get('/ah/hello', "AHController@testSummary");
 
 Route::get("/ya/hi","YAController@index");
-
-Route::get("/dk/event","DKController@getEvent");
 
 Route::get("/vs/test","VSController@bladeTest");
 
 Route::get("/vs/testEvent","VSController@testEvent");
 
+Route::get("/vs/testSummary","VSController@testSummary");

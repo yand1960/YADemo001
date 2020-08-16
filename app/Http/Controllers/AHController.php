@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class VSController
+class AHController
 {
     public function testEvent(Request $request)
     {
@@ -19,11 +18,11 @@ class VSController
     {
 //        $summary = DB::table('appointments')->select('*')
 //            ->get();
-        $appointments = \App\VSevent::find(1)->appointments;
-        $events = \App\VSevent::find(1)->get();
+//        $appointments = \App\VSevent::find(1)->appointments;
+        $events = \App\AHevent::find(1)->get();
 //        $events = \App\VSevent::where('id','1')->get();
-//        echo($events);
-        return view('VS/helloVS', ['events'=> $events]);
+        echo($events);
+        return view('AH/hello', ['events'=> $events]);
     }
 //    public function testAppointment(Request $request)
 //    {
