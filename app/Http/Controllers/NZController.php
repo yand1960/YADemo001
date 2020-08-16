@@ -41,11 +41,26 @@ class NZController
         $eventNameArr = NZEvent::where('id', "=", $id)->select('name')->first();
         $eventName = $eventNameArr['name'];
 //        $eventName = NZEvent::all();
-        $appointments = NZEvent::find(1)->appointments();
-        echo '<pre>';
-        echo($eventName);
-        echo($appointments);
-        return view('NZ/appointments', ["eventName"=>$eventName]);
+        $appointments = \App\NZEvent::find($id)->appointments;
+//        $appointments = NZAppointment::where('event_id', "=", $id)->select('*')->get();
+//        echo '<pre>';
+//        echo($eventName);
+//        echo($appointments);
+        return view('NZ/appointments', ["eventName"=>$eventName, "appointments"=>$appointments]);
+    }
+
+    public function AddAppointments($id, $name) {
+        \App\NZAppointment::query()->where('id', $id)->update(['name' => $name]);
+//        return redirect()->back();
+    }
+
+    public function EditAppointments($id) {
+        $appointment = NZAppointment::where('id', "=", $id)->select('*')->first();
+//        $appointments = NZAppointment::where('event_id', "=", $id)->select('*')->get();
+//        echo '<pre>';
+//        echo($eventName);
+        echo($appointment);
+        return view('NZ/editAppointment', ["appointment"=>$appointment]);
     }
 
 }
