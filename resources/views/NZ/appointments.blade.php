@@ -26,13 +26,13 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($appointments as $a)
-            <tr>
-                <td>{{$a['date']}}</td>
-                <td>{{$a['name']}}</td>
-                <td><a href="/nz/appointments/{{$e['id']}}" class="btn btn-primary">Make an appointment</a></td>
-            </tr>
-    @endforeach
+{{--    @foreach($appointments as $a)--}}
+{{--            <tr>--}}
+{{--                <td>{{$a['date']}}</td>--}}
+{{--                <td>{{$a['name']}}</td>--}}
+{{--                <td><a href="/nz/appointments/{{$e['id']}}" class="btn btn-primary">Make an appointment</a></td>--}}
+{{--            </tr>--}}
+{{--    @endforeach--}}
     </tbody>
 </table>
 
