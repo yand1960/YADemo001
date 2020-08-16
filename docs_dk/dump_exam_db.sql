@@ -1,6 +1,8 @@
 
 create database if not exists dkappointments;
 
+use dkappointments;
+
 CREATE TABLE `Appointments` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`User` VARCHAR(40) NOT NULL,
@@ -11,10 +13,18 @@ CREATE TABLE `Appointments` (
 
 CREATE TABLE `Events` (
 	`id` INT NOT NULL AUTO_INCREMENT,
+	`category_id` INT NOT NULL,
 	`eventName` VARCHAR(30) NOT NULL,
 	`description` VARCHAR(255) NOT NULL,
 	`created_at` DATETIME NOT NULL,
 	`updated_at` DATETIME NOT NULL,
+	PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Categories` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(30) NOT NULL,
+	`description` VARCHAR(255) NULL,
 	PRIMARY KEY (`id`)
 );
 

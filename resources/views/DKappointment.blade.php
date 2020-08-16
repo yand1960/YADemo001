@@ -50,15 +50,6 @@
         <p>Cдача экзамена по дипломному проекту</p>
 
 
-{{--        <span>product.not_available</span>--}}
-{{--        <br>--}}
-{{--        <span>Сообщить мне, когда товар появится в наличии:</span>--}}
-        <div class="warning">
-        </div>
-{{--        <form method="POST" action="http://internet-shop.tmweb.ru/subscription/1">--}}
-{{--            <input type="hidden" name="_token" value="c8B2E444liOd13nrLklbOfo5e41RpiWMEua0sok4">            <input type="text" name="email"></input>--}}
-{{--            <button type="submit">Отправить</button>--}}
-{{--        </form>--}}
     </div>
 </div>
 </body>
