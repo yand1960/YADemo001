@@ -1,7 +1,7 @@
-CREATE SCHEMA `mydbVS` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `mydbVS` DEFAULT CHARACTER SET utf8 ;
 USE `mydbVS`;
 
-CREATE TABLE `vsappointments` (
+CREATE TABLE IF NOT EXISTS `vsappointments` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`User` VARCHAR(40) NOT NULL,
 	`appointmentDate` DATETIME NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE `vsappointments` (
 	PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `vsevents` (
+CREATE TABLE IF NOT EXISTS `vsevents` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`eventName` VARCHAR(30) NOT NULL,
 	`description` VARCHAR(255) NOT NULL,

@@ -27,10 +27,11 @@ class VSController
         return view('VS/appointmentsVS', ['data' => $appointments]);
     }
 
-    public function makeAppointment($id, Request $request){
+    public function makeAppointment(Request $request){
         $userName =  $request->input('nameInput');
-        $appointments = \App\VSappointment::query()->where('id', $id)->updateOrInsert(['User' => $userName]);
-
+        $id = $request->input('appointmentId');
+        $appointments = \App\VSappointment::query()->where('id', $id)->update(['User' => $userName]);
+        return redirect()->back();
 //        UPDATE `vsappointments` SET `User` = 'VladimirOne' WHERE `vsappointments`.`id` = 6
 
     }
