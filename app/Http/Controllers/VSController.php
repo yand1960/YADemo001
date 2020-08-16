@@ -27,8 +27,11 @@ class VSController
         return view('VS/appointmentsVS', ['data' => $appointments]);
     }
 
-    public function makeAppointment(Request $request, $id){
+    public function makeAppointment($id, Request $request){
         $userName =  $request->input('nameInput');
+        $appointments = \App\VSappointment::query()->where('id', $id)->updateOrInsert(['User' => $userName]);
+
+//        UPDATE `vsappointments` SET `User` = 'VladimirOne' WHERE `vsappointments`.`id` = 6
 
     }
 //    public function joinTest(Request $request){

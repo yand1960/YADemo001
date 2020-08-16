@@ -1,7 +1,4 @@
-<?php
-
-?>
-    <!doctype html>
+ <!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -15,6 +12,15 @@
             background-color: #454d55;
         }
     </style>
+    <script>
+        function add(id) {
+            console.log('clicked')
+            let url = '/vs/examList/makeAppointment/' + id
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", url)
+            xhr.send();
+        }
+    </script>
     <title>Document</title>
 </head>
 <body>
@@ -29,14 +35,13 @@
     <tbody>
     @foreach($data as $d)
         <tr>
-{{--            <th>{{$d['id']}}</th>--}}
             <td>{{$d['appointmentDate'] ?? ''}}</td>
             @if($d['User'] == '')
                 <td>
                     <form>
                         <div class="form-group">
                             <input type="text" size="1" name="nameInput" required class="form-control-inline" style="width: 50%" id="exampleFormControlInput1" placeholder="Enter your name to make an appointment">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" onclick="add({{$d['id']}})" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </td>
