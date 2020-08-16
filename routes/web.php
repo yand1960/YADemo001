@@ -62,6 +62,7 @@ Route::get('/derevoxp/sortByName', "DVController@sortEventByName"); // сорт�
 Route::get('derevoxp/admin', "DVController@setEvent"); // старт админки
 Route::post('/derevoxp/admin/set/', "DVController@setEvent"); // для добавления новых событий методом POST (админ)
 Route::get('/derevoxp/admin/delete/{id}', "DVController@deleteEvent"); // для удаления событий
+Route::get('/derevoxp/bind', "DVController@bindEvent"); // для заказа
 
 /////////////// END FOR DEREVOXP ///////////////
 
@@ -73,4 +74,8 @@ Route::get("/vs/test","VSController@bladeTest");
 
 Route::get("/vs/testEvent","VSController@testEvent");
 
-Route::get("/vs/testSummary","VSController@testSummary");
+Route::get("/vs/examList","VSController@examList");
+
+Route::get("/vs/examList/physicsExam","VSController@physicsExam");
+Route::get("/vs/examList/chemistryExam","VSController@chemistryExam");
+Route::get("/vs/examList/mechanicsExam","VSController@mechanicsExam");
