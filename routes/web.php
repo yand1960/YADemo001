@@ -70,7 +70,8 @@ Route::get('/derevoxp/bind', "DVController@bindEvent"); // для заказа
 
 /////////////// END FOR DEREVOXP ///////////////
 
-Route::get('/ah/hello', "AHController@testSummary");
+Route::get('/ah/events', "AHController@events");
+Route::get('/ah/appointments', "AHController@appointments");
 
 Route::get("/ya/hi","YAController@index");
 
