@@ -29,7 +29,7 @@
     <tr>
 {{--        <th scope="col">#</th>--}}
         <th scope="col">Exam time</th>
-        <th scope="col">Make an appointment</th>
+        <th scope="col">Appointments</th>
     </tr>
     </thead>
     <tbody>
@@ -40,9 +40,9 @@
                 <td>
                     <form method="get" action="{{ action('VSController@makeAppointment') }}">
                         <div class="form-group">
-                            <input type="text" size="1" name="nameInput" required class="form-control-inline" style="width: 50%" id="exampleFormControlInput1" placeholder="Enter your name to make an appointment">
+                            <input type="text" size="1" name="nameInput" required class="form-control-inline" style="width: 50%" id="exampleFormControlInput1" placeholder="Enter your name">
                             <input type="hidden" value="{{$d['id']}}" name="appointmentId"/>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary btn-sm">Make an appointment</button>
                         </div>
                     </form>
                 </td>

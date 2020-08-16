@@ -24,7 +24,7 @@
         <th scope="col">#</th>
         <th scope="col">Exam name</th>
         <th scope="col" class="text-center">Exam description</th>
-        <th scope="col">Make an appointment</th>
+        <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
@@ -33,7 +33,7 @@
                 <th>{{$d['id']}}</th>
                 <td>{{$d['eventName'] ?? ''}}</td>
                 <td>{{$d['description']}}</td>
-                <td><a href="/vs/examList/chosenExam/{{$d['id']}}" class="badge badge-primary">Make an appointment</a></td>
+                <td><a href="/vs/examList/chosenExam/{{$d['id']}}" class="badge badge-primary">More details</a></td>
             </tr>
     @endforeach
     </tbody>
