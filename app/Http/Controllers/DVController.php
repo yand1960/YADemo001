@@ -42,15 +42,13 @@ class DVController
         return view('dv_admin', ['data' => $events, 'indicator' => $indicator, 'token' => $token]);
     }
 
-    public function deleteEvent() // удаление событий через админку (/derevoxp/admin/delete)
+    public function deleteEvent($id) // удаление событий через админку (/derevoxp/admin/delete)
     {
-//        $indicator = 'Успешно удалено';
-//            $id = $request->id;
-//        $token = $this->userToken->getUserToken();
-        \App\DVEvent::delete("delete from events where id = 55");
-//        $events = \App\DVEvent::all()->sortByDesc('id'); // сортируем по последнему id
-//        return view('dv_admin', ['data' => $events, 'indicator' => $indicator, 'token' => $token]);
-        return view('dv_admin_alter');
+        $indicator = 'Успешно удалено';
+        $token = $this->userToken->getUserToken();
+        \App\DVEvent::find($id)->delete();
+        $events = \App\DVEvent::all()->sortByDesc('id'); // сортируем по последнему id
+        return view('dv_admin', ['data' => $events, 'indicator' => $indicator, 'token' => $token]);
     }
 
     public function sortEventByData() // сортировка по дате
@@ -109,6 +107,16 @@ class DVController
         $this->userToken->setUserToken(''); // чистим сессию
         $token = $this->userToken->getUserToken();
         return view('dv_viev', ['data' => $events, 'token' => $token]);
+    }
+
+    public function bindEvent($id)
+    {
+        $indicator = 'Успешно забронировано!';
+        $iventID = $id;
+        $token = $this->userToken->getUserToken();
+        \App\DVEvent::insert(array('date' => $data, 'group_id' => $groupId));
+        $events = \App\DVEvent::all()->sortByDesc('id'); // сортируем по последнему id
+        return view('dv_admin', ['data' => $events, 'indicator' => $indicator, 'token' => $token]);
     }
 
 }
