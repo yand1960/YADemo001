@@ -11,10 +11,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Document</title>
+    <style>
+        body{
+            background-color: #454d55;
+        }
+    </style>
 </head>
 <body>
-<h1>Hello, Vladimir</h1>
-<div class="container-fluid"></div>
 <table class="table table-dark table-hover">
     <thead>
     <tr>
@@ -34,10 +37,6 @@
             </tr>
     @endforeach
     </tbody>
-{{--    @foreach($summary ?? '' as $s)--}}
-{{--        {{$s['appointmentDate']}}--}}
-{{--        {{$s['eventName']}}--}}
-{{--    @endforeach--}}
 </table>
 {{--@foreach($events as $d)--}}
 {{--    <p>{{$d['eventName']}}</p>--}}
