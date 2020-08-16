@@ -54,6 +54,12 @@
             </div>
         </form>
 
+        <div class = "row">
+            @foreach($appointments as $appointment)
+                @include();
+            @endforeach
+        </div>
+
         <nav>
             <ul class="pagination">
 

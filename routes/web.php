@@ -44,7 +44,8 @@ Route::get('/dk/hello', function () {
     return "HEllO, I AM DINAR!";
 });
 
-Route::get('/dk/', 'DKController@DKindex');
+Route::get('/dk/', 'DKController@DKindex')->name('dk/DKindex');
+Route::post('/dk/', 'DKController@addEvent')->name('dk/add');
 Route::get('/dk/DKcategories', 'DKController@DKcategories');
 Route::get('/dk/{DKcategory}', 'DKController@DKcategory');
 Route::get('/dk/DKappointment/{event?}', 'DKController@DKappointment');
@@ -52,7 +53,7 @@ Route::get('/dk/DKappointment/phpexam', 'DKController@DKphpexam');
 
 //Route::get('/dk/appointments/{event}', 'DKController@appointment');
 
-Route::get("/dk/event","DKController@getEvent");
+Route::get("/dk/events/{cat_id}","DKController@DKevents");
 
 //Dinar Khalfin/////////
 
