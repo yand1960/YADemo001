@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\DKCategory;
 use Illuminate\Http\Request;
 
 class DKController extends Controller
@@ -20,6 +21,7 @@ class DKController extends Controller
     }
 
     public function DKcategory($DKcategory) {
+        $categoryObject = DKCategory::where('id', $DKcategory)->first();
         return view('DKcategory', compact('DKcategory'));
     }
 

@@ -6,7 +6,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DKEvent extends Model
+class DKCategory extends Model
 {
     protected $table = 'events';
     protected $connection = 'DiKhSQL';

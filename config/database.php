@@ -104,7 +104,7 @@ return [
             'url' => 'DATABASE_URL',
             'host' => '127.0.0.1',
             'port' => '3307',
-            'database' => 'examProject',
+            'database' => 'dkappointments',
             'username' => 'root',
             'password' => '',
             'unix_socket' => 'DB_SOCKET', '',
