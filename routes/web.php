@@ -74,6 +74,9 @@ Route::get('/derevoxp/bind', "DVController@bindEvent"); // для заказа
 
 Route::get('/ah/events', "AHController@events");
 Route::get('/ah/appointments', "AHController@appointments");
+Route::get("/ah/examList/chosenExam/{id}","AHController@chosenExam");
+Route::get("/ah/examList","AHController@examList");
+Route::get("/ah/examList/makeAppointment","AHController@makeAppointment");
 
 Route::get("/ya/hi","YAController@index");
 

@@ -16,8 +16,8 @@ class AHController
 {
 //    public function events(Request $request)
 //    {
-//        $events = \App\VSevent::select('Name', 'Description', 'Id')->get();
-//        $appointments = \App\VSappointment::select('Name', 'date', 'Id')->get();
+//        $events = \App\AHevent::select('Name', 'Description', 'Id')->get();
+//        $appointments = \App\AHappointment::select('Name', 'date', 'Id')->get();
 //        return view('AH/events', ['events' => $events, 'appointments' => $appointments, ]);
 //    }
 
@@ -37,15 +37,6 @@ class AHController
         $id = $request->input('appointmentId');
         $appointments = \App\AHappointment::query()->where('Id', $id)->update(['Name' => $userName]);
         return redirect()->back();
-//        UPDATE `vsappointments` SET `User` = 'VladimirOne' WHERE `vsappointments`.`id` = 6
-
     }
-    /*    public function appointments($id) {
-    //        $eventName = AHEvent::select('name')->where('id', "=", $id);
-            $appointments = AHEvent::find(1)->appointments();
-            //var_dump($eventName);
-            var_dump($appointments);
-            return view('AH/appointments', ["appointments"=>$appointments, "eventName"=>$eventName]);
-        }*/
 
 }

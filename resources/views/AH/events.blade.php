@@ -33,7 +33,7 @@
             <th>{{$d['Id']}}</th>
             <td>{{$d['Name'] ?? ''}}</td>
             <td>{{$d['Description']}}</td>
-            <td><a href="/vs/examList/chosenExam/{{$d['id']}}" class="badge badge-primary">More details</a></td>
+            <td><a href="/ah/examList/chosenExam/{{$d['id']}}" class="badge badge-primary">More details</a></td>
         </tr>
     @endforeach
     </tbody>
