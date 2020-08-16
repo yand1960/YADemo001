@@ -22,7 +22,8 @@ class NZController
     }
 
     public function events() {
-        $events = NZEvent::select()->get();
+        $events = NZEvent::find(1)->appointments;
+        var_dump($events);
         return view('NZ/events', ["events"=>$events]);
     }
 
