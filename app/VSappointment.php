@@ -6,9 +6,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class VS_Appointments extends Model
+class VSappointment extends Model
 {
     protected $connection = 'mysqlVS';
-    protected $table = 'appointments';
+    protected $table = 'vsappointments';
     public $timestamps = false;
 }

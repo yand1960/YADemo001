@@ -1,7 +1,4 @@
-<?php
-
-?>
-    <!doctype html>
+ <!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -10,42 +7,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Document</title>
     <style>
-        body{
+        body {
             background-color: #454d55;
         }
     </style>
+    <script>
+        function add(id) {
+            console.log('clicked')
+            let url = '/vs/examList/makeAppointment/' + id
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", url)
+            xhr.send();
+        }
+    </script>
+    <title>Document</title>
 </head>
 <body>
 <table class="table table-dark table-hover">
     <thead>
     <tr>
-        <th scope="col">#</th>
-        <th scope="col">Exam name</th>
-        <th scope="col" class="text-center">Exam description</th>
+{{--        <th scope="col">#</th>--}}
+        <th scope="col">Exam time</th>
         <th scope="col">Make an appointment</th>
     </tr>
     </thead>
     <tbody>
-    @foreach($events as $d)
-            <tr>
-                <th>{{$d['id']}}</th>
-                <td>{{$d['eventName'] ?? ''}}</td>
-                <td>{{$d['description']}}</td>
-                <td><a href="/vs/examList/chosenExam/{{$d['id']}}" class="badge badge-primary">Make an appointment</a></td>
-            </tr>
+    @foreach($data as $d)
+        <tr>
+            <td>{{$d['appointmentDate'] ?? ''}}</td>
+            @if($d['User'] == '')
+                <td>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" size="1" name="nameInput" required class="form-control-inline" style="width: 50%" id="exampleFormControlInput1" placeholder="Enter your name to make an appointment">
+                            <button type="submit" onclick="add({{$d['id']}})" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </td>
+            @else
+                <td>{{$d['User']}}</td>
+            @endif
+
+        </tr>
     @endforeach
     </tbody>
 </table>
-{{--@foreach($events as $d)--}}
-{{--    <p>{{$d['eventName']}}</p>--}}
-{{--    <p>{{$d['description']}}</p>--}}
-{{--@endforeach--}}
-{{--@foreach($appointments as $d)--}}
-{{--    <p>{{$d['User']}}</p>--}}
-{{--    <p>{{$d['appointmentDate']}}</p>--}}
-{{--@endforeach--}}
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
