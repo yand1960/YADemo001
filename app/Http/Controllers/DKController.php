@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DKAppointment;
 use App\DKCategory;
 use App\DKEvent;
 use Illuminate\Http\Request;
@@ -14,7 +15,7 @@ class DKController extends Controller
 
     public function DKindex()
     {
-        $appointments = DKappointment::get();
+        $appointments = DKAppointment::get();
         return view('DKindex', compact('appointments'));
     }
 

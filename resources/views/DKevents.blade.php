@@ -41,15 +41,15 @@
 </nav>
 
 <div class="container">
-    <div class="panel panel-primary>
+    <div class="panel panel-primary">
     @foreach($events as $event)
     <div class="panel">
-        <a href = "{{ url('dk/events/'.$category->id)}}">
-            <img src="https://leisure.union.ufl.edu/Content/Images/leisure-courses.png">
-            <h2>{{ $category->name }}</h2>
+        <a href = "{{ url('dk/events/'.$event['id'])}}">
+            <img src="https://leisure.union.ufl.edu/Content/Images/leisure-courses.png" />
+            <h2>{{ $event['name'] }}</h2>
         </a>
         <p>
-            {{ $category->description }}
+            {{ $event['description'] }}
         </p>
     </div>
     @endforeach

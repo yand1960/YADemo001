@@ -55,8 +55,8 @@
         </form>
 
         <div class = "row">
-            @foreach($appointments as $appointment)
-                @include();
+            @foreach($appointments as $a)
+                smth here <br />
             @endforeach
         </div>
 
