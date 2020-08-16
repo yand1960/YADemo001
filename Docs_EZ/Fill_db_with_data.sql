@@ -48,4 +48,5 @@ INSERT INTO `mydb`.`tblevents` (`id_Exam`, `isApproved`, `TimeandDate`, `Student
 INSERT INTO `mydb`.`tblevents` (`id_Exam`, `isApproved`, `TimeandDate`, `StudentName`, `tblEvents_id_Exam`, `tblAppointments_id_Disc`) VALUES ('4', '1', '2020-08-28', 'Ivanov Petr', '4', '4');
 INSERT INTO `mydb`.`tblevents` (`id_Exam`, `isApproved`, `TimeandDate`, `StudentName`, `tblEvents_id_Exam`, `tblAppointments_id_Disc`) VALUES ('5', '1', '2020-08-29', 'Ivanov Petr', '5', '5');
 
+
 SELECT * FROM mydb.tblappointments;
