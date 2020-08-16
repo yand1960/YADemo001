@@ -80,4 +80,6 @@ Route::get("/vs/testEvent","VSController@testEvent");
 
 Route::get("/vs/examList","VSController@examList");
 
-Route::get("/vs/examList/chosenExam/{id}","VSController@chosenExam")->name('exam.show');
+Route::get("/vs/examList/chosenExam/{id}","VSController@chosenExam");
+
+Route::get("/vs/examList/makeAppointment/{id}","VSController@makeAppointment");

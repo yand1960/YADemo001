@@ -27,7 +27,7 @@ class VSController
         return view('VS/appointmentsVS', ['data' => $appointments]);
     }
 
-    public function makeAnAppointment(Request $request){
+    public function makeAppointment(Request $request, $id){
         $userName =  $request->input('nameInput');
 
     }
