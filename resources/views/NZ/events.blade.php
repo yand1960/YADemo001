@@ -25,7 +25,7 @@
     <tr>
         <th scope="col">Exam name</th>
         <th scope="col" class="text-center">Exam description</th>
-        <th scope="col">Make an appointment</th>
+        <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
@@ -33,7 +33,7 @@
             <tr>
                 <td>{{$e['name']}}</td>
                 <td>{{$e['description']}}</td>
-                <td><a href="/nz/appointments/{{$e['id']}}" class="btn btn-primary">Make an appointment</a></td>
+                <td><a href="/nz/appointments/{{$e['id']}}" class="btn btn-primary">Go to appointments</a></td>
             </tr>
     @endforeach
     </tbody>
