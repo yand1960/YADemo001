@@ -62,15 +62,15 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+
         'mysqlVS' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '3306'),
+
+            'host' => 'mama',
+            'port' =>  '3306',
             'database' => 'mydbVS',
             'username' => 'root',
-            'password' => '',
-            'unix_socket' => env('DB_SOCKET', ''),
+            'password' => 'Pa$$w0rd',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -146,13 +146,11 @@ return [
 
         'nz_mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
+            'host' => 'mama',
+            'port' => '3306',
             'database' => 'nzappointments',
             'username' => 'root',
-            'password' => '',
-            'unix_socket' => env('DB_SOCKET', ''),
+            'password' => 'Pa$$w0rd',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
