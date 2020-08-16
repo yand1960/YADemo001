@@ -17,12 +17,13 @@ class DKController extends Controller
 
     public function DKcategories()
     {
-        return view('DKcategories');
+        $categories = DKCategory::get();
+        return view('DKcategories', compact('categories'));
     }
 
-    public function DKcategory($DKcategory) {
-        $categoryObject = DKCategory::where('id', $DKcategory)->first();
-        return view('DKcategory', compact('DKcategory'));
+    public function DKcategory($code) {
+        $category = DKCategory::where('code', $code)->first();
+        return view('DKcategory', compact('category'));
     }
 
     public function DKappointment($event = null)    {

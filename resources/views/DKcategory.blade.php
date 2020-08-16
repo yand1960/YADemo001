@@ -43,16 +43,18 @@
 <div class="container">
     <div class="starter-template">
         <h1>
-            @if($DKcategory == 'education')
-                Образование
-            @elseif($DKcategory == 'health')
-                Здоровье
-            @elseif($DKcategory == 'leisure')
-                Досуг
-            @endif
+            {{ $category->name }}
+{{--            @if($DKcategory == 'education')--}}
+{{--                Образование--}}
+{{--            @elseif($DKcategory == 'health')--}}
+{{--                Здоровье--}}
+{{--            @elseif($DKcategory == 'leisure')--}}
+{{--                Досуг--}}
+{{--            @endif--}}
         </h1>
         <p>
-            В этом разделе вы найдёте самые популярные предложения для Вашего планировщика задач!
+            {{ $category->description }}
+{{--            В этом разделе вы найдёте самые популярные предложения для Вашего планировщика задач!--}}
         </p>
 
     </div>
