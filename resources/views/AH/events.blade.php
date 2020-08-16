@@ -11,41 +11,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Document</title>
-    <style>
-        body{
-            background-color: #454d55;
-        }
-    </style>
 </head>
 <body>
-<table class="table table-dark table-hover">
+
+<h1>Events</h1>
+
+<a class="btn btn-outline-primary" href="/nz/events/desc" role="button">Descending sort</a>
+<a class="btn btn-outline-primary" href="/nz/events/asc" role="button">Ascending sort</a>
+
+<div class="container-fluid"></div>
+<table class="table table-striped table-hover">
     <thead>
     <tr>
-        <th scope="col">#</th>
         <th scope="col">Exam name</th>
         <th scope="col" class="text-center">Exam description</th>
-        <th scope="col"></th>
+        <th scope="col">Make an appointment</th>
     </tr>
     </thead>
     <tbody>
-    @foreach($events as $d)
-            <tr>
-                <th>{{$d['id']}}</th>
-                <td>{{$d['eventName'] ?? ''}}</td>
-                <td>{{$d['description']}}</td>
-                <td><a href="/vs/examList/chosenExam/{{$d['id']}}" class="badge badge-primary">More details</a></td>
-            </tr>
+    @foreach($events as $e)
+        <tr>
+            <td>{{$e['name']}}</td>
+            <td>{{$e['description']}}</td>
+            <td><a href="/nz/appointments/{{$e['id']}}" class="btn btn-primary">Make an appointment</a></td>
+        </tr>
     @endforeach
     </tbody>
 </table>
-{{--@foreach($events as $d)--}}
-{{--    <p>{{$d['eventName']}}</p>--}}
-{{--    <p>{{$d['description']}}</p>--}}
-{{--@endforeach--}}
-{{--@foreach($appointments as $d)--}}
-{{--    <p>{{$d['User']}}</p>--}}
-{{--    <p>{{$d['appointmentDate']}}</p>--}}
-{{--@endforeach--}}
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -57,4 +50,3 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
-
