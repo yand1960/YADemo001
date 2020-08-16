@@ -22,19 +22,27 @@ class NZController
     }
 
     public function events() {
-        $events = NZEvent::find(1)->appointments;
-        var_dump($events);
+        $events = NZEvent::all();
+//        var_dump($events);
         return view('NZ/events', ["events"=>$events]);
     }
 
     public function eventsDesc() {
-        $events = NZEvent::orderBy('created_at', 'desc')->get();
+        $events = NZEvent::orderBy('name', 'desc')->get();
         return view('NZ/events', ["events"=>$events]);
     }
 
     public function eventsAsc() {
-        $events = NZEvent::orderBy('created_at', 'asc')->get();
+        $events = NZEvent::orderBy('name', 'asc')->get();
         return view('NZ/events', ["events"=>$events]);
+    }
+
+    public function appointments($id) {
+//        $eventName = NZEvent::select('name')->where('id', "=", $id);
+        $appointments = NZEvent::find(1)->appointments();
+        //var_dump($eventName);
+        var_dump($appointments);
+        return view('NZ/appointments', ["appointments"=>$appointments, "eventName"=>$eventName]);
     }
 
 }

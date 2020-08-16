@@ -26,6 +26,7 @@ Route::get('/nz/test/{word}', 'NZController@test');
 Route::get('/nz/events', 'NZController@events');
 Route::get('/nz/events/desc', 'NZController@eventsDesc');
 Route::get('/nz/events/asc', 'NZController@eventsAsc');
+Route::get('/nz/appointments/{id}', 'NZController@appointments');
 
 
 
