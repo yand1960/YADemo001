@@ -5,7 +5,7 @@ namespace App;
 
 
 use Illuminate\Database\Eloquent\Model;
-use App\VSappointment;
+use App\AHappointment;
 
 class VSevent extends Model
 {

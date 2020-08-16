@@ -16,7 +16,7 @@
 
 <h1>{{$eventName}}</h1>
 <h3>Appointments</h3>
-
+<a href="/nz/events">Back to events</a>
 <div class="container-fluid"></div>
 <table class="table table-striped table-hover">
     <thead>
@@ -26,13 +26,18 @@
     </tr>
     </thead>
     <tbody>
-{{--    @foreach($appointments as $a)--}}
-{{--            <tr>--}}
-{{--                <td>{{$a['date']}}</td>--}}
-{{--                <td>{{$a['name']}}</td>--}}
-{{--                <td><a href="/nz/appointments/{{$e['id']}}" class="btn btn-primary">Make an appointment</a></td>--}}
-{{--            </tr>--}}
-{{--    @endforeach--}}
+    @foreach($appointments as $a)
+            <tr>
+                <td>{{$a['date']}}</td>
+                <td>
+                    @if($a['name'])
+                        {{$a['name']}}
+                    @else
+                        <a href="/nz/appointments/edit/{{$a['id']}}" class="btn btn-primary">Make an appointment</a>
+                    @endif
+                </td>
+            </tr>
+    @endforeach
     </tbody>
 </table>
 

@@ -44,7 +44,7 @@
     <div class="starter-template">
         @foreach($categories as $category)
             <div class="panel">
-                <a href = "/{{ $category->code }}">
+                <a href = "{{ url('dk/events/'.$category->id)}}">
                     <img src="https://leisure.union.ufl.edu/Content/Images/leisure-courses.png">
                     <h2>{{ $category->name }}</h2>
                 </a>

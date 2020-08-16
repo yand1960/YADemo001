@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Планировщик мероприятий: Категория {{ $DKcategory ?? '' }}</title>
+    <title>Планировщик мероприятий: Все Категории</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <script src="/js/jquery.min.js"></script>
@@ -34,29 +34,29 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a >Войти</a></li>
+
             </ul>
         </div>
     </div>
 </nav>
 
 <div class="container">
-    <div class="starter-template">
-        <h1>
-            {{ $category->name }}
-{{--            @if($DKcategory == 'education')--}}
-{{--                Образование--}}
-{{--            @elseif($DKcategory == 'health')--}}
-{{--                Здоровье--}}
-{{--            @elseif($DKcategory == 'leisure')--}}
-{{--                Досуг--}}
-{{--            @endif--}}
-        </h1>
+    <div class="panel panel-primary>
+    @foreach($events as $event)
+    <div class="panel">
+        <a href = "{{ url('dk/events/'.$category->id)}}">
+            <img src="https://leisure.union.ufl.edu/Content/Images/leisure-courses.png">
+            <h2>{{ $category->name }}</h2>
+        </a>
         <p>
             {{ $category->description }}
-{{--            В этом разделе вы найдёте самые популярные предложения для Вашего планировщика задач!--}}
         </p>
+    </div>
+    @endforeach
 
     </div>
+</div>
+
 </div>
 </body>
 </html>
