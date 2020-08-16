@@ -5,6 +5,7 @@ namespace App;
 
 
 use Illuminate\Database\Eloquent\Model;
+use App\NZAppointment;
 
 class NZEvent extends Model
 {
@@ -15,3 +16,4 @@ class NZEvent extends Model
         return $this->hasMany('App\NZAppointment', 'event_id');
     }
 }
+

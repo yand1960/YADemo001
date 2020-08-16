@@ -38,11 +38,14 @@ class NZController
     }
 
     public function appointments($id) {
-//        $eventName = NZEvent::select('name')->where('id', "=", $id);
+        $eventNameArr = NZEvent::where('id', "=", $id)->select('name')->first();
+        $eventName = $eventNameArr['name'];
+//        $eventName = NZEvent::all();
         $appointments = NZEvent::find(1)->appointments();
-        //var_dump($eventName);
-        var_dump($appointments);
-        return view('NZ/appointments', ["appointments"=>$appointments, "eventName"=>$eventName]);
+        echo '<pre>';
+        echo($eventName);
+        echo($appointments);
+        return view('NZ/appointments', ["eventName"=>$eventName]);
     }
 
 }
