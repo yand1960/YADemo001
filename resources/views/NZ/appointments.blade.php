@@ -14,25 +14,22 @@
 </head>
 <body>
 
-<h1>Events</h1>
-
-<a class="btn btn-outline-primary" href="/nz/events/desc" role="button">Descending sort</a>
-<a class="btn btn-outline-primary" href="/nz/events/asc" role="button">Ascending sort</a>
+<h1>{{$eventName}}</h1>
+<h3>Appointments</h3>
 
 <div class="container-fluid"></div>
 <table class="table table-striped table-hover">
     <thead>
     <tr>
-        <th scope="col">Exam name</th>
-        <th scope="col" class="text-center">Exam description</th>
-        <th scope="col">Make an appointment</th>
+        <th scope="col">Time</th>
+        <th scope="col" class="text-center">Name</th>
     </tr>
     </thead>
     <tbody>
-    @foreach($events as $e)
+    @foreach($appointments as $a)
             <tr>
-                <td>{{$e['name']}}</td>
-                <td>{{$e['description']}}</td>
+                <td>{{$a['date']}}</td>
+                <td>{{$a['name']}}</td>
                 <td><a href="/nz/appointments/{{$e['id']}}" class="btn btn-primary">Make an appointment</a></td>
             </tr>
     @endforeach

@@ -17,14 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('/nz/hello', function () {
     return "Hello, I am NZ!";
 });
-
 Route::get('/nz/test/{word}', 'NZController@test');
 Route::get('/nz/events', 'NZController@events');
 Route::get('/nz/events/desc', 'NZController@eventsDesc');
 Route::get('/nz/events/asc', 'NZController@eventsAsc');
+Route::get('/nz/appointments/{id}', 'NZController@appointments');
+
+
 
 Route::get("/ya/hello", function(){
     return "Hello, I am YA!";
