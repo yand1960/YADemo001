@@ -29,27 +29,25 @@
     <tbody>
     @foreach($data as $d)
         <tr>
-            <th>1</th>
+            <th>{{$d['id']}}</th>
             <td>{{$d['appointmentDate'] ?? ''}}</td>
-            <td>{{$d['User'] ?? 'Enter your name'}}</td>
+            @if($d['User'] == '')
+                <td>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" size="1" required class="form-control-inline" style="width: 50%" id="exampleFormControlInput1" placeholder="Enter your name to make an appointment">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </td>
+            @else
+                <td>{{$d['User']}}</td>
+            @endif
+
         </tr>
     @endforeach
     </tbody>
 </table>
-{{--<form>--}}
-{{--<div class="form-group">--}}
-{{--    <label for="exampleFormControlInput1">Enter your name</label>--}}
-{{--    <input type="text" required class="form-control" id="exampleFormControlInput1" placeholder="for example: Vladimir">--}}
-{{--</div>--}}
-{{--    <div class="form-group">--}}
-{{--        <label for="exampleFormControlSelect1">Example select</label>--}}
-{{--        <select class="form-control" id="exampleFormControlSelect1">--}}
-{{--            @foreach($data as $d)--}}
-{{--                <option>{{$d['appointmentDate']}}</option>--}}
-{{--            @endforeach--}}
-{{--        </select>--}}
-{{--    </div>--}}
-{{--</form>--}}
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
