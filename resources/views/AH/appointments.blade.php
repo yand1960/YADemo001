@@ -31,7 +31,7 @@
         <th scope="col">Exam time</th>
         <th scope="col" >
             <div style="display: inline-block">Appointments</div>
-            <div style="display: inline-block; position: absolute; right: 1%"><a href="{{ action('AHController@examList') }}" class="badge badge-light">Return to the list of exams</a></div>
+            <div style="display: inline-block; position: absolute; right: 1%"><a href="{{ action('AHController@events') }}" class="badge badge-light">Return to the list of exams</a></div>
         </th>
     </tr>
     </thead>

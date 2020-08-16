@@ -28,7 +28,8 @@ class AHController
     }
 
     public function chosenExam($id){
-        $appointments = \App\AHevent::find($id)->appointments;
+//        $appointments = \App\AHevent::find($id)->appointments;
+        $appointments = \App\AHappointment::where('ahevents_id', '=', $id)->select('Name')->get();
         return view('AH/appointments', ['data' => $appointments]);
     }
 
