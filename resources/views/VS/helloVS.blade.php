@@ -33,7 +33,7 @@
                 <th>{{$d['id']}}</th>
                 <td>{{$d['eventName'] ?? ''}}</td>
                 <td>{{$d['description']}}</td>
-                <td><a href="#" class="badge badge-primary">Make an appointment</a></td>
+                <td><a href="/vs/examList/chosenExam/{{$d['id']}}" class="badge badge-primary">Make an appointment</a></td>
             </tr>
     @endforeach
     </tbody>

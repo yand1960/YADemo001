@@ -21,7 +21,7 @@
 <table class="table table-dark table-hover">
     <thead>
     <tr>
-        <th scope="col">#</th>
+{{--        <th scope="col">#</th>--}}
         <th scope="col">Exam time</th>
         <th scope="col">Make an appointment</th>
     </tr>
@@ -29,13 +29,13 @@
     <tbody>
     @foreach($data as $d)
         <tr>
-            <th>{{$d['id']}}</th>
+{{--            <th>{{$d['id']}}</th>--}}
             <td>{{$d['appointmentDate'] ?? ''}}</td>
             @if($d['User'] == '')
                 <td>
                     <form>
                         <div class="form-group">
-                            <input type="text" size="1" required class="form-control-inline" style="width: 50%" id="exampleFormControlInput1" placeholder="Enter your name to make an appointment">
+                            <input type="text" size="1" name="nameInput" required class="form-control-inline" style="width: 50%" id="exampleFormControlInput1" placeholder="Enter your name to make an appointment">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
