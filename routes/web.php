@@ -82,4 +82,4 @@ Route::get("/vs/examList","VSController@examList");
 
 Route::get("/vs/examList/chosenExam/{id}","VSController@chosenExam");
 
-Route::get("/vs/examList/makeAppointment/{id}","VSController@makeAppointment");
+Route::get("/vs/examList/makeAppointment","VSController@makeAppointment");

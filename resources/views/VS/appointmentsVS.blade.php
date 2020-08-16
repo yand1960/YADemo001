@@ -38,10 +38,11 @@
             <td>{{$d['appointmentDate'] ?? ''}}</td>
             @if($d['User'] == '')
                 <td>
-                    <form>
+                    <form method="get" action="{{ action('VSController@makeAppointment') }}">
                         <div class="form-group">
                             <input type="text" size="1" name="nameInput" required class="form-control-inline" style="width: 50%" id="exampleFormControlInput1" placeholder="Enter your name to make an appointment">
-                            <button type="submit" onclick="add({{$d['id']}})" class="btn btn-primary">Submit</button>
+                            <input type="hidden" value="{{$d['id']}}" name="appointmentId"/>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </td>
