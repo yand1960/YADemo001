@@ -59,7 +59,7 @@ class NZController
 //        $appointments = NZAppointment::where('event_id', "=", $id)->select('*')->get();
 //        echo '<pre>';
 //        echo($eventName);
-        echo($appointment);
+//        echo($appointment);
         return view('NZ/editAppointment', ["appointment"=>$appointment]);
     }
 
