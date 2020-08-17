@@ -62,7 +62,8 @@ Route::get('/derevoxp/sortByName', "DVController@sortEventByName"); // сорт�
 Route::get('derevoxp/admin', "DVController@setEvent"); // старт админки
 Route::post('/derevoxp/admin/set/', "DVController@setEvent"); // для добавления новых событий методом POST (админ)
 Route::get('/derevoxp/admin/delete/{id}', "DVController@deleteEvent"); // для удаления событий
-Route::get('/derevoxp/bind', "DVController@bindEvent"); // для заказа
+Route::get('/derevoxp/bind/{id}/{client}', "DVController@bindEvent"); // для заказа
+Route::get('/derevoxp/unbind/{id}/{client}', "DVController@unbindEvent"); // для заказа
 
 /////////////// END FOR DEREVOXP ///////////////
 
