@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
     <script>
         function add(id) {
             console.log('clicked')
-            let url = '/vs/examList/makeAppointment/' + id
+            let url = '/ah/examList/makeAppointment/' + id
             let xhr = new XMLHttpRequest();
             xhr.open("GET", url)
             xhr.send();
@@ -27,21 +27,21 @@
 <table class="table table-dark table-hover">
     <thead>
     <tr>
-{{--        <th scope="col">#</th>--}}
+        {{--        <th scope="col">#</th>--}}
         <th scope="col">Exam time</th>
         <th scope="col" >
             <div style="display: inline-block">Appointments</div>
-            <div style="display: inline-block; position: absolute; right: 1%"><a href="{{ action('VSController@examList') }}" class="badge badge-light">Return to the list of exams</a></div>
+            <div style="display: inline-block; position: absolute; right: 1%"><a href="{{ action('AHController@events') }}" class="badge badge-light">Return to the list of exams</a></div>
         </th>
     </tr>
     </thead>
     <tbody>
     @foreach($data as $d)
         <tr>
-            <td>{{$d['appointmentDate'] ?? ''}}</td>
-            @if($d['User'] == '')
+            <td>{{$d['date'] ?? ''}}</td>
+            @if($d['Name'] == '')
                 <td>
-                    <form method="get" action="{{ action('VSController@makeAppointment') }}">
+                    <form method="get" action="{{ action('AHController@makeAppointment') }}">
                         <div class="form-group">
                             <input type="text" size="1" name="nameInput" required class="form-control-inline" style="width: 50%" id="exampleFormControlInput1" placeholder="Enter your name">
                             <input type="hidden" value="{{$d['id']}}" name="appointmentId"/>
@@ -50,7 +50,7 @@
                     </form>
                 </td>
             @else
-                <td>{{$d['User']}}</td>
+                <td>{{$d['Name']}}</td>
             @endif
 
         </tr>

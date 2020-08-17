@@ -17,14 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('/nz/hello', function () {
     return "Hello, I am NZ!";
 });
-
 Route::get('/nz/test/{word}', 'NZController@test');
 Route::get('/nz/events', 'NZController@events');
 Route::get('/nz/events/desc', 'NZController@eventsDesc');
 Route::get('/nz/events/asc', 'NZController@eventsAsc');
+Route::get('/nz/appointments/{id}', 'NZController@appointments');
+Route::get('/nz/appointments/edit/{id}', 'NZController@EditAppointments');
+Route::get('/nz/appointments/add/{id}/{name}', 'NZController@AddAppointments');
+
+
 
 Route::get("/ya/hello", function(){
     return "Hello, I am YA!";
@@ -38,7 +44,8 @@ Route::get('/dk/hello', function () {
     return "HEllO, I AM DINAR!";
 });
 
-Route::get('/dk/', 'DKController@DKindex');
+Route::get('/dk/', 'DKController@DKindex')->name('dk/DKindex');
+Route::post('/dk/', 'DKController@addEvent')->name('dk/add');
 Route::get('/dk/DKcategories', 'DKController@DKcategories');
 Route::get('/dk/{DKcategory}', 'DKController@DKcategory');
 Route::get('/dk/DKappointment/{event?}', 'DKController@DKappointment');
@@ -46,7 +53,7 @@ Route::get('/dk/DKappointment/phpexam', 'DKController@DKphpexam');
 
 //Route::get('/dk/appointments/{event}', 'DKController@appointment');
 
-Route::get("/dk/event","DKController@getEvent");
+Route::get("/dk/events/{cat_id}","DKController@DKevents");
 
 //Dinar Khalfin/////////
 
@@ -67,7 +74,11 @@ Route::get('/derevoxp/unbind/{id}/{client}', "DVController@unbindEvent"); // Ð´Ð
 
 /////////////// END FOR DEREVOXP ///////////////
 
-Route::get('/ah/hello', "AHController@testSummary");
+Route::get('/ah/events', "AHController@events");
+Route::get('/ah/appointments', "AHController@appointments");
+Route::get("/ah/examList/chosenExam/{id}","AHController@chosenExam");
+Route::get("/ah/examList","AHController@examList");
+Route::get("/ah/examList/makeAppointment","AHController@makeAppointment");
 
 Route::get("/ya/hi","YAController@index");
 
@@ -77,6 +88,6 @@ Route::get("/vs/testEvent","VSController@testEvent");
 
 Route::get("/vs/examList","VSController@examList");
 
-Route::get("/vs/examList/physicsExam","VSController@physicsExam");
-Route::get("/vs/examList/chemistryExam","VSController@chemistryExam");
-Route::get("/vs/examList/mechanicsExam","VSController@mechanicsExam");
+Route::get("/vs/examList/chosenExam/{id}","VSController@chosenExam");
+
+Route::get("/vs/examList/makeAppointment","VSController@makeAppointment");

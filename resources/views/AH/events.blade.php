@@ -13,7 +13,7 @@
     <title>Document</title>
     <style>
         body{
-            background-color: #454d55;
+            background-color: burlywood;
         }
     </style>
 </head>
@@ -29,23 +29,15 @@
     </thead>
     <tbody>
     @foreach($events as $d)
-            <tr>
-                <th>{{$d['id']}}</th>
-                <td>{{$d['eventName'] ?? ''}}</td>
-                <td>{{$d['description']}}</td>
-                <td><a href="/vs/examList/chosenExam/{{$d['id']}}" class="badge badge-primary">More details</a></td>
-            </tr>
+        <tr>
+            <th>{{$d['Id']}}</th>
+            <td>{{$d['Name'] ?? ''}}</td>
+            <td>{{$d['Description']}}</td>
+            <td><a href="/ah/examList/chosenExam/{{$d['Id']}}" class="badge badge-primary">More details</a></td>
+        </tr>
     @endforeach
     </tbody>
 </table>
-{{--@foreach($events as $d)--}}
-{{--    <p>{{$d['eventName']}}</p>--}}
-{{--    <p>{{$d['description']}}</p>--}}
-{{--@endforeach--}}
-{{--@foreach($appointments as $d)--}}
-{{--    <p>{{$d['User']}}</p>--}}
-{{--    <p>{{$d['appointmentDate']}}</p>--}}
-{{--@endforeach--}}
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -57,4 +49,3 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
-

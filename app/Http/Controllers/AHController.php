@@ -1,38 +1,43 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 
 
+use App\AHAppointment;
+use App\AHEvent;
 use Illuminate\Http\Request;
 
+
 class AHController
+
+
 {
-    public function testEvent(Request $request)
+//    public function events(Request $request)
+//    {
+//        $events = \App\AHevent::select('Name', 'Description', 'Id')->get();
+//        $appointments = \App\AHappointment::select('Name', 'date', 'Id')->get();
+//        return view('AH/events', ['events' => $events, 'appointments' => $appointments, ]);
+//    }
+
+    public function events(Request $request)
     {
-        $events = \App\VSevent::select('eventName', 'description', 'id')->get();
-        $appointments = \App\VSappointment::select('User', 'appointmentDate', 'id')->get();
-        return view('VS/helloVS', ['events' => $events, 'appointments' => $appointments, ]);
-    }
-    public function testSummary(Request $request)
-    {
-//        $summary = DB::table('appointments')->select('*')
-//            ->get();
-//        $appointments = \App\VSevent::find(1)->appointments;
         $events = \App\AHevent::find(1)->get();
-//        $events = \App\VSevent::where('id','1')->get();
-        echo($events);
-        return view('AH/hello', ['events'=> $events]);
+        return view('AH/events', ['events'=> $events]);
     }
-//    public function testAppointment(Request $request)
-//    {
-//        $appointments = \App\VSappointment::select('User', 'appointmentDate')->get();
-//        return view('VS/helloVS', ['data' => $appointments]);
-//    }
-//    public function addAppointment(Request $request)
-//    {
-//        $appointments = \App\VSappointment::insert('User', 'appointmentDate')->get();
-//        return view('VS/helloVS', ['data' => $appointments]);
-//    }
+
+    public function chosenExam($id){
+//        $appointments = \App\AHevent::find($id)->appointments;
+        $appointments = \App\AHappointment::where('ahevents_id', '=', $id)->select('Name')->get();
+        return view('AH/appointments', ['data' => $appointments]);
+    }
+
+    public function makeAppointment(Request $request){
+        $userName =  $request->input('nameInput');
+        $id = $request->input('appointmentId');
+        $appointments = \App\AHappointment::query()->where('Id', $id)->update(['Name' => $userName]);
+        return redirect()->back();
+    }
 
 }

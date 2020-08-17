@@ -101,13 +101,12 @@ return [
 
         'DiKhSQL' => [
             'driver' => 'mysql',
-            'url' => 'DATABASE_URL',
+
             'host' => '127.0.0.1',
             'port' => '3307',
-            'database' => 'examProject',
+            'database' => 'dkappointments',
             'username' => 'root',
             'password' => '',
-            'unix_socket' => 'DB_SOCKET', '',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',

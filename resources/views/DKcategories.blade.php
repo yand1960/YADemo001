@@ -42,33 +42,45 @@
 
 <div class="container">
     <div class="starter-template">
-        <div class="panel">
-            <a href ="education">
-                <img src="https://www.eurodiaconia.org/wordpress/wp-content/uploads/2017/01/education.jpg">
-                <h2>Образование</h2>
-            </a>
-            <p>
-                В этом разделе Вы найдёте самые популярные мероприятия по повышению квалификации
-            </p>
-        </div>
-        <div class="panel">
-            <a href = "health">
-                <img src=" https://static.wixstatic.com/media/d658a9_60a036d882f14d29b2eecde054cb3227~mv2.jpg">
-                <h2>Здоровье</h2>
-            </a>
-            <p>
-                Лучшие предложения для поддержания здоровья
-            </p>
-        </div>
-        <div class="panel">
-            <a href = "leisure">
-                <img src="https://leisure.union.ufl.edu/Content/Images/leisure-courses.png">
-                <h2>Досуг</h2>
-            </a>
-            <p>
-                Здесь можно найти мероприятие для души, для свободного времени
-            </p>
-        </div>
+        @foreach($categories as $category)
+            <div class="panel">
+                <a href = "{{ url('dk/events/'.$category->id)}}">
+                    <img src="https://leisure.union.ufl.edu/Content/Images/leisure-courses.png">
+                    <h2>{{ $category->name }}</h2>
+                </a>
+                <p>
+                    {{ $category->description }}
+                </p>
+            </div>
+        @endforeach
+
+{{--        <div class="panel">--}}
+{{--            <a href ="education">--}}
+{{--                <img src="https://www.eurodiaconia.org/wordpress/wp-content/uploads/2017/01/education.jpg">--}}
+{{--                <h2>Образование</h2>--}}
+{{--            </a>--}}
+{{--            <p>--}}
+{{--                В этом разделе Вы найдёте самые популярные мероприятия по повышению квалификации--}}
+{{--            </p>--}}
+{{--        </div>--}}
+{{--        <div class="panel">--}}
+{{--            <a href = "health">--}}
+{{--                <img src=" https://static.wixstatic.com/media/d658a9_60a036d882f14d29b2eecde054cb3227~mv2.jpg">--}}
+{{--                <h2>Здоровье</h2>--}}
+{{--            </a>--}}
+{{--            <p>--}}
+{{--                Лучшие предложения для поддержания здоровья--}}
+{{--            </p>--}}
+{{--        </div>--}}
+{{--        <div class="panel">--}}
+{{--            <a href = "leisure">--}}
+{{--                <img src="https://leisure.union.ufl.edu/Content/Images/leisure-courses.png">--}}
+{{--                <h2>Досуг</h2>--}}
+{{--            </a>--}}
+{{--            <p>--}}
+{{--                Здесь можно найти мероприятие для души, для свободного времени--}}
+{{--            </p>--}}
+{{--        </div>--}}
     </div>
 </div>
 </body>

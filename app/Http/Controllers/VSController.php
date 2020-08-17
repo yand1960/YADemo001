@@ -22,19 +22,17 @@ class VSController
 //        $events = \App\VSevent::where('id','1')->get();
         return view('VS/helloVS', ['events'=> $events]);
     }
-    public function physicsExam(Request $request){
-        $appointments = \App\VSevent::find(1)->appointments;
+    public function chosenExam($id){
+        $appointments = \App\VSevent::find($id)->appointments;
         return view('VS/appointmentsVS', ['data' => $appointments]);
-
     }
-    public function chemistryExam(Request $request){
-        $appointments = \App\VSevent::find(2)->appointments;
-        return view('VS/appointmentsVS', ['data' => $appointments]);
 
-    }
-    public function mechanicsExam(Request $request){
-        $appointments = \App\VSevent::find(3)->appointments;
-        return view('VS/appointmentsVS', ['data' => $appointments]);
+    public function makeAppointment(Request $request){
+        $userName =  $request->input('nameInput');
+        $id = $request->input('appointmentId');
+        $appointments = \App\VSappointment::query()->where('id', $id)->update(['User' => $userName]);
+        return redirect()->back();
+//        UPDATE `vsappointments` SET `User` = 'VladimirOne' WHERE `vsappointments`.`id` = 6
 
     }
 //    public function joinTest(Request $request){
