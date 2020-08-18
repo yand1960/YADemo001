@@ -69,7 +69,8 @@ Route::get('/derevoxp/sortByName', "DVController@sortEventByName"); // сорт�
 Route::get('derevoxp/admin', "DVController@setEvent"); // старт админки
 Route::post('/derevoxp/admin/set/', "DVController@setEvent"); // для добавления новых событий методом POST (админ)
 Route::get('/derevoxp/admin/delete/{id}', "DVController@deleteEvent"); // для удаления событий
-Route::get('/derevoxp/bind', "DVController@bindEvent"); // для заказа
+Route::get('/derevoxp/bind/{id}/{client}', "DVController@bindEvent"); // для заказа
+Route::get('/derevoxp/unbind/{id}/{client}', "DVController@unbindEvent"); // для заказа
 
 /////////////// END FOR DEREVOXP ///////////////
 
@@ -77,7 +78,8 @@ Route::get('/ah/events', "AHController@events");
 Route::get('/ah/appointments', "AHController@appointments");
 Route::get("/ah/examList/chosenExam/{id}","AHController@chosenExam");
 Route::get("/ah/examList","AHController@examList");
-Route::get("/ah/examList/makeAppointment","AHController@makeAppointment");
+//Route::get("/ah/examList/makeAppointment","AHController@makeAppointment");
+Route::get("/ah/examList/makeAppointment/{id}","AHController@makeAppointment"); // могу ошибаться, но ты, кажется, забыл, что это get - ему параметр передать нужно
 
 Route::get("/ya/hi","YAController@index");
 

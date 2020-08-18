@@ -15,14 +15,6 @@ class DVController
         $this->userToken = $userToken;
     }
 
-    public function getEvent() // список всех событий (/derevoxp)
-    {
-        $events = \App\DVEvent::select('id', 'date', 'group_id')->get();
-        $token = $this->userToken->getUserToken();
-        return view('dv_viev', ['data' => $events, 'token' => $token]);
-
-    }
-
     public function setEvent(Request $request) // добавление новых событий через админку (/derevoxp/admin)
     {
         $indicator = '';
@@ -55,14 +47,18 @@ class DVController
     {
         $events = \App\DVEvent::all()->sortBy('date');
         $token = $this->userToken->getUserToken();
-        return view('dv_viev', ['data' => $events, 'sortData' => 'activeSort', 'sortName' => '', 'token' => $token]);
+        $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
+        $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
+        return view('dv_viev', ['sortData' => 'activeSort', 'sortName' => '', 'data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents]);
     }
 
     public function sortEventByName() // сортировка по имени
     {
         $events = \App\DVEvent::all()->sortBy('group_id');
         $token = $this->userToken->getUserToken();
-        return view('dv_viev', ['data' => $events, 'sortName' => 'activeSort', 'sortData' => '', 'token' => $token]);
+        $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
+        $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
+        return view('dv_viev', ['data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents, 'sortName' => 'activeSort', 'sortData' => '']);
     }
 
     public function register() // костыль, связанный с ошибкой get-post
@@ -89,7 +85,10 @@ class DVController
                 $token = \App\DVclient::where("login", '=', $login)->where('pass', '=', $password)->select('token')->get(); // получаем токен с базы
                 $token = $token[0]['token'];
                 $this->userToken->setUserToken($token); // кладём токен в сессию
-                return view('dv_viev', ['data' => $events, 'token' => $token]);
+                $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
+                $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
+                return view('dv_viev', ['data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents]);
+
             } else {
                 $indicator = 'Неверный пароль!';
                 return view('dv_test', ['indicator' => $indicator]);
@@ -109,14 +108,36 @@ class DVController
         return view('dv_viev', ['data' => $events, 'token' => $token]);
     }
 
-    public function bindEvent($id)
+    public function getEvent() // список всех событий (/derevoxp)
     {
-        $indicator = 'Успешно забронировано!';
-        $iventID = $id;
+        $events = \App\DVEvent::select('id', 'date', 'group_id')->get();
         $token = $this->userToken->getUserToken();
-        \App\DVEvent::insert(array('date' => $data, 'group_id' => $groupId));
-        $events = \App\DVEvent::all()->sortByDesc('id'); // сортируем по последнему id
-        return view('dv_admin', ['data' => $events, 'indicator' => $indicator, 'token' => $token]);
+        $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
+        $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
+        return view('dv_viev', ['data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents]);
+    }
+
+
+    public function bindEvent($id, $client) // id - событие, client - token клиента
+    {
+        $token = $client;
+        $userID = \App\DVclient::where("token", $client)->value('id'); // узнаём id клиента по токену
+        \App\DVappointments::insert(array('client_id' => $userID, 'event_id' => $id));
+        $indicator = "Успешно добавлено!";
+        $events = \App\DVEvent::all(); // список ВСЕХ ивентов
+        $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
+        return view('dv_viev', ['data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents]);
+    }
+
+    public function unbindEvent($id, $client) // id - событие, client - token клиента
+    {
+        $token = $client;
+        $userID = \App\DVclient::where("token", $client)->value('id'); // узнаём id клиента по токену
+        $appointmentId = \App\DVappointments::where("client_id", $userID)->where('event_id', $id)->value('id');
+        \App\DVappointments::find($appointmentId)->delete();
+        $events = \App\DVEvent::all(); // список ВСЕХ ивентов
+        $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
+        return view('dv_viev', ['data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents]);
     }
 
 }

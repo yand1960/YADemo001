@@ -36,7 +36,10 @@ class AHController
     public function makeAppointment(Request $request){
         $userName =  $request->input('nameInput');
         $id = $request->input('appointmentId');
-        $appointments = \App\AHappointment::query()->where('Id', $id)->update(['Name' => $userName]);
+//        $appointments = \App\AHappointment::query()->where('Id', $id)->update(['Name' => $userName]);
+
+        $appointments = \App\AHappointment::where('Id', $id)->update(['Name' => $userName]); // так правильнее, вроде бы
+
         return redirect()->back();
     }
 

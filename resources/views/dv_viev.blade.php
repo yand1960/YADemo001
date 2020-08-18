@@ -32,7 +32,14 @@
             <input type="datetime-local" value="{{str_replace(' ', 'T', $p['date'])}}">
             <div class="groupTitle"><p>Играет группа: </p><h2>{{$p['group_id']}}</h2></div>
             @if ($token)
-                <button onclick="bindEvent({{$p['id']}})">Забронировать</button>
+                    @if (strpos($bindedEvents, '{"event_id":"' . $p['id'] . '"}'))
+
+                    <h2>ЗАБРОНИРОВАНО!</h2>
+
+                        <button onclick='unbindEvent({{$p['id']}}, "{{$token}}")'>Отказаться</button>
+                    @else
+                        <button onclick='bindEvent({{$p['id']}}, "{{$token}}")'>Забронировать</button>
+                    @endif
             @endif
         </div>
     @endforeach
