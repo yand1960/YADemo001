@@ -40,7 +40,7 @@ return [
         'mysqlVS' => [
             'driver' => 'mysql',
 
-            'host' => 'mama',
+            'host' => '192.168.1.15',
             'port' =>  '3306',
             'database' => 'mydbVS',
             'username' => 'exams',
@@ -58,12 +58,12 @@ return [
 
         'DV_mysql' => [
             'driver' => 'mysql',
-            'host' => 'derevoxp.ru',
+            'host' => '192.168.1.15',
             'port' => '3306',
-            'database' => 'a0438483_dvproject',
-            'username' => 'a0438483_dvproject',
-            'password' => 'mama!myla!ramu',
-            'charset' => 'utf8',
+            'database' => 'dvappointments',
+            'username' => 'exams',
+            'password' => 'Pa$$w0rd',
+
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
@@ -75,7 +75,7 @@ return [
 
         'DiKhSQL' => [
             'driver' => 'mysql',
-            'host' => 'mama',
+            'host' => '192.168.1.15',
             'port' => '3306',
             'database' => 'dkappointments',
             'username' => 'exams',
@@ -92,7 +92,7 @@ return [
 
         'nz_mysql' => [
             'driver' => 'mysql',
-            'host' => 'mama',
+            'host' => '192.168.1.15',
             'port' => '3306',
             'database' => 'nzappointments',
             'username' => 'exams',
@@ -110,7 +110,7 @@ return [
 		
 		'ah_mysql' => [
             'driver' => 'mysql',
-            'host' => 'mama',
+            'host' => '192.168.1.15',
             'port' => '3306',
             'database' => 'ah',
             'username' => 'exams',
