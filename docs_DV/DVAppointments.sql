@@ -8,8 +8,6 @@
 
 create database if not exists dvappointments;
 
-use dvappointments;
-
 create table if not exists groups -- список групп
 (
     id serial not null primary key,
