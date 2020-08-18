@@ -86,7 +86,7 @@
 
                 <div class="links">
                     <a href="nz/events">NZ</a>
-                    <a href="derevoxp">DV</a>
+                    <a href="derevoxp/register">DV</a>
                     <a href="ah/events">AH</a>
                     <a href="vs/examList">VS</a>
 					<!--
