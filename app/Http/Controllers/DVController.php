@@ -47,18 +47,32 @@ class DVController
     {
         $events = \App\DVEvent::all()->sortBy('date');
         $token = $this->userToken->getUserToken();
-        $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
-        $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
-        return view('dv_viev', ['sortData' => 'activeSort', 'sortName' => '', 'data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents]);
+//        $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
+//        $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
+//        return view('dv_viev', ['sortData' => 'activeSort', 'sortName' => '', 'data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents]);
+        if ($token) {
+            $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
+            $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
+            return view('dv_viev', ['sortData' => 'activeSort', 'sortName' => '', 'data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents]);
+        } else {
+            return view('dv_viev', ['sortData' => 'activeSort', 'sortName' => '', 'data' => $events, 'token' => "", "bindedEvents" => '']);
+        }
     }
 
     public function sortEventByName() // сортировка по имени
     {
         $events = \App\DVEvent::all()->sortBy('group_id');
         $token = $this->userToken->getUserToken();
-        $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
-        $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
-        return view('dv_viev', ['data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents, 'sortName' => 'activeSort', 'sortData' => '']);
+//        $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
+//        $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
+//        return view('dv_viev', ['data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents, 'sortName' => 'activeSort', 'sortData' => '']);
+        if ($token) {
+            $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
+            $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
+            return view('dv_viev', ['sortName' => 'activeSort', 'sortData' => '', 'data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents]);
+        } else {
+            return view('dv_viev', ['sortName' => 'activeSort', 'sortData' => '', 'data' => $events, 'token' => "", "bindedEvents" => '']);
+        }
     }
 
     public function register() // костыль, связанный с ошибкой get-post
@@ -112,9 +126,14 @@ class DVController
     {
         $events = \App\DVEvent::select('id', 'date', 'group_id')->get();
         $token = $this->userToken->getUserToken();
-        $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
-        $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
-        return view('dv_viev', ['data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents]);
+        if ($token) {
+            $userID = \App\DVclient::where("token", $token)->value('id'); // узнаём id клиента по токену
+            $bindedEvents = \App\DVappointments::where("client_id", $userID)->select('event_id')->get(); // получаем список заказанных клиентом ивентов
+            return view('dv_viev', ['data' => $events, 'token' => $token, "bindedEvents" => $bindedEvents]);
+        } else {
+            return view('dv_viev', ['data' => $events, 'token' => "", "bindedEvents" => '']);
+        }
+
     }
 
 
