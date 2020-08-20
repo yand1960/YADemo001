@@ -13,7 +13,7 @@
         }
     </style>
     <script>
-        function add(id) { // и на кой тебе чёрт эта функция, если она нигде не вызывается?
+        function add(id) {
             console.log('clicked')
             let url = '/ah/examList/makeAppointment/' + id
             let xhr = new XMLHttpRequest();
@@ -29,11 +29,9 @@
     <tr>
         {{--        <th scope="col">#</th>--}}
         <th scope="col">Exam time</th>
-        <th scope="col">
+        <th scope="col" >
             <div style="display: inline-block">Appointments</div>
-            <div style="display: inline-block; position: absolute; right: 1%"><a
-                    href="{{ action('AHController@events') }}" class="badge badge-light">Return to the list of exams</a>
-            </div>
+            <div style="display: inline-block; position: absolute; right: 1%"><a href="{{ action('AHController@examList') }}" class="badge badge-light">Return to the list of exams</a></div>
         </th>
     </tr>
     </thead>
@@ -43,13 +41,10 @@
             <td>{{$d['date'] ?? ''}}</td>
             @if($d['Name'] == '')
                 <td>
-
-                    {{-- вот хз, если честно, зачем тебе форма, если достаточно функцию add() вызвать --}}
                     <form method="get" action="{{ action('AHController@makeAppointment') }}">
                         <div class="form-group">
-                            <input type="text" size="1" name="nameInput" required class="form-control-inline"
-                                   style="width: 50%" id="exampleFormControlInput1" placeholder="Enter your name">
-                            <input type="hidden" value="{{$d['id']}}" name="appointmentId"/>
+                            <input type="text" size="1" name="nameInput" required class="form-control-inline" style="width: 50%" id="exampleFormControlInput1" placeholder="Enter your name">
+                            <input type="hidden" value="{{$d['Id']}}" name="appointmentId"/>
                             <button type="submit" class="btn btn-primary btn-sm">Make an appointment</button>
                         </div>
                     </form>

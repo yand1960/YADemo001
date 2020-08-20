@@ -28,18 +28,20 @@ class AHController
     }
 
     public function chosenExam($id){
-//        $appointments = \App\AHevent::find($id)->appointments;
-        $appointments = \App\AHappointment::where('ahevents_id', '=', $id)->select('Name')->get();
+       $appointments = \App\AHevent::find($id)->appointments;
+        $appointments = \App\AHappointment::where('ahevents_id', '=', $id)->select('Name', 'Id')->get();
         return view('AH/appointments', ['data' => $appointments]);
     }
 
     public function makeAppointment(Request $request){
-        $userName =  $request->input('nameInput');
-        $id = $request->input('appointmentId');
+          $userName =  $request->input('nameInput');
+          $id = $request->input('appointmentId');
+
 //        $appointments = \App\AHappointment::query()->where('Id', $id)->update(['Name' => $userName]);
 
         $appointments = \App\AHappointment::where('Id', $id)->update(['Name' => $userName]); // так правильнее, вроде бы
-
+//        $a = array($id, $Name);
+//        return $a;
         return redirect()->back();
     }
 
