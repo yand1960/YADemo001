@@ -45,38 +45,38 @@ Route::get('/dk/hello', function () {
 });
 
 
-Route::get('/events', [
+Route::get('/dk/events', [
     'uses' => 'DKEventController@index',
     'as' => 'events.index'
 ]);
 
-Route::get('/', [
+Route::get('/dk', [
     'uses' => 'DKDashboardController@index',
     'as' => 'dashboard.index'
 ]);
 
-Route::get('/events/create', [
+Route::get('/dk/events/create', [
     'uses' => 'DKEventController@create',
     'as' => 'events.create'
 ]);
 
-Route::post('/events', [
+Route::post('dk/events', [
     'uses' => 'DKEventController@store',
     'as' => 'events.store'
 ]);
 
-Route::get('/events/{event}/edit', [
+Route::get('/dk/events/{event}/edit', [
     'uses' => 'DKEventController@edit',
     'as' => 'events.edit'
 ]);
 
 
-Route::post('/events/{event}', [
+Route::post('/dk/events/{event}', [
     'uses' => 'DKEventController@update',
     'as' => 'events.update'
 ]);
 
-Route::delete('/events/{event}', [
+Route::delete('dk/events/{event}', [
     'uses' => 'DKEventController@destroy',
     'as' => 'events.delete'
 ]);
