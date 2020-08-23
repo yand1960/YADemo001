@@ -17,8 +17,8 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-CREATE SCHEMA IF NOT EXISTS `luboe` DEFAULT CHARACTER SET utf8 ;
-USE `luboe`;
+CREATE SCHEMA IF NOT EXISTS `ah_appointments` DEFAULT CHARACTER SET utf8 ;
+USE `ah_appointments`;
 
 --
 -- База данных: `luboe`
