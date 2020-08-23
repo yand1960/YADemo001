@@ -11,7 +11,7 @@
                     <p class="lead text-white">Веб-приложение для создания записи на экзамен</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="img/event.jpg" alt="event">
+                    <img src="https://www.lancasterguardian.co.uk/images-i.jpimedia.uk/imagefetch/https://jpgreatcontent.co.uk/wp-content/uploads/2019/12/shutterstock_502856116.jpg?crop=982:524,smart&width=640" alt="event">
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
     <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h2>Экзамены</h2>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <a href="/events/create" class="btn btn-sm btn-primary">Добавить мероприятие</a>
+            <a href="/dk/events/create" class="btn btn-sm btn-primary">Добавить мероприятие</a>
         </div>
     </div>
     <div class="table-responsive shadow rounded">
