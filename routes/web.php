@@ -44,16 +44,42 @@ Route::get('/dk/hello', function () {
     return "HEllO, I AM DINAR!";
 });
 
-Route::get('/dk/', 'DKController@DKindex')->name('dk/DKindex');
-Route::post('/dk/', 'DKController@addEvent')->name('dk/add');
-Route::get('/dk/DKcategories', 'DKController@DKcategories');
-Route::get('/dk/{DKcategory}', 'DKController@DKcategory');
-Route::get('/dk/DKappointment/{event?}', 'DKController@DKappointment');
-Route::get('/dk/DKappointment/phpexam', 'DKController@DKphpexam');
 
-//Route::get('/dk/appointments/{event}', 'DKController@appointment');
+Route::get('/dk/events', [
+    'uses' => 'DKEventController@index',
+    'as' => 'events.index'
+]);
 
-Route::get("/dk/events/{cat_id}","DKController@DKevents");
+Route::get('/dk', [
+    'uses' => 'DKDashboardController@index',
+    'as' => 'dashboard.index'
+]);
+
+Route::get('/dk/events/create', [
+    'uses' => 'DKEventController@create',
+    'as' => 'events.create'
+]);
+
+Route::post('dk/events', [
+    'uses' => 'DKEventController@store',
+    'as' => 'events.store'
+]);
+
+Route::get('/dk/events/{event}/edit', [
+    'uses' => 'DKEventController@edit',
+    'as' => 'events.edit'
+]);
+
+
+Route::post('/dk/events/{event}', [
+    'uses' => 'DKEventController@update',
+    'as' => 'events.update'
+]);
+
+Route::delete('dk/events/{event}', [
+    'uses' => 'DKEventController@destroy',
+    'as' => 'events.delete'
+]);
 
 //Dinar Khalfin/////////
 
@@ -78,8 +104,7 @@ Route::get('/ah/events', "AHController@events");
 Route::get('/ah/appointments', "AHController@appointments");
 Route::get("/ah/examList/chosenExam/{id}","AHController@chosenExam");
 Route::get("/ah/examList","AHController@examList");
-//Route::get("/ah/examList/makeAppointment","AHController@makeAppointment");
-Route::get("/ah/examList/makeAppointment/{id}","AHController@makeAppointment"); // могу ошибаться, но ты, кажется, забыл, что это get - ему параметр передать нужно
+Route::get("/ah/examList/makeAppointment","AHController@makeAppointment");
 
 Route::get("/ya/hi","YAController@index");
 

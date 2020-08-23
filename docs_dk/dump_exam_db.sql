@@ -1,79 +1,50 @@
 
-create database if not exists `dkappointments`;
+create database if not exists exam_events;
 
-use dkappointments;
-
-CREATE TABLE `Appointments` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`User` VARCHAR(40) charset utf8 NULL,
-	`appointmentDate` DATETIME NOT NULL,
-	`event_id` INT NOT NULL,
-	PRIMARY KEY (`id`)
-);
+use exam_events;
 
 CREATE TABLE `Events` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-	`category_id` INT NOT NULL,
-	`eventName` VARCHAR(30) charset utf8 NOT NULL,
-	`description` VARCHAR(255) charset utf8 NOT NULL,
-
+	`student_name` VARCHAR(45) NOT NULL,
+	`subject` VARCHAR(45) NOT NULL,
+	`scheduled_for` DATE NOT NULL,
+	`created_at` DATETIME NOT NULL,
+	`updated_at` DATETIME NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `Categories` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`name` VARCHAR(30) charset utf8 NOT NULL,
-	`code` VARCHAR(30) charset utf8 NOT NULL,
-	`description` VARCHAR(255) charset utf8 NULL,
-	PRIMARY KEY (`id`)
-);
+INSERT INTO Events (id, student_name, subject, scheduled_for, created_at, updated_at) VALUES
+(1, 'Динар Халфин', 'Русский язык', '2020-08-20', '2020-08-18 11:04:31', '2020-08-18 11:04:31'),
+(2, 'Daniel Golder', 'PHP', '2020-09-30', '2020-08-18 14:19:41', '2020-08-18 14:19:41'),
+(3, 'Jurgen Zimmermann', 'Softwareentwicklung', '2020-08-29', '2020-08-18 14:53:28', '2020-08-18 14:53:28'),
+(4, 'Sam Cletus', 'English', '2020-11-20', '2020-08-18 15:17:21', '2020-08-18 15:17:21'),
+(5, 'Tulkin Suleev', 'Литература', '2020-09-30', '2020-08-18 14:19:41', '2020-08-18 14:19:41'),
+(6, 'Иван Иванов', 'Физика', '2020-03-29', '2020-08-18 15:20:02', '2020-08-18 15:20:02'),
+(7, 'Петр Петров', 'Математика', '2020-10-20', '2020-08-18 15:20:28', '2020-08-18 15:20:28'),
+(8, 'James Bond', 'Programming', '2020-09-19', '2020-08-18 14:19:41', '2020-08-18 14:19:41'),
+(9, 'Alicia Keys', 'Java', '2020-08-11', '2020-08-18 14:53:28', '2020-08-18 14:53:28'),
+(10, 'Erika Badu', 'Химия', '2020-08-13', '2020-08-18 14:19:41', '2020-08-18 14:19:41'),
 
-ALTER TABLE `Appointments` ADD CONSTRAINT `Appointments_fk0` FOREIGN KEY (`event_id`) REFERENCES `Events`(`id`);
+-- CREATE TABLE `Events` (
+-- 	`id` INT NOT NULL AUTO_INCREMENT,
+-- 	`category_id` INT NOT NULL,
+-- 	`eventName` VARCHAR(30) NOT NULL,
+-- 	`description` VARCHAR(255) NOT NULL,
+-- 	`created_at` DATETIME NOT NULL,
+-- 	`updated_at` DATETIME NOT NULL,
+-- 	PRIMARY KEY (`id`)
+-- );
+--
+-- CREATE TABLE `Categories` (
+-- 	`id` INT NOT NULL AUTO_INCREMENT,
+-- 	`name` VARCHAR(30) NOT NULL,
+-- 	`code` VARCHAR(30) NOT NULL,
+-- 	`description` VARCHAR(255) NULL,
+-- 	PRIMARY KEY (`id`)
+-- );
 
-INSERT INTO `events` (`id`, `category_id`, `eventName`, `description`) VALUES
-(1, 1,'Экзамен', 'Экзамен по PHP'),
-(2, 2,'Прием у участового врача', 'Получить больничный лист'),
-(3, 3,'Театр', 'Сходить с подруго в театр');
-
-INSERT INTO `appointments` (`id`, `User`, `appointmentDate`, `event_id`) VALUES
-(1, 'Василий', '2020-09-03 10:00:00', 1),
-(2, 'Пётр', '2020-09-03 11:00:00', 1),
-(3, 'Сергей', '2020-09-03 10:00:00', 2),
-(4, 'Евгений', '2020-09-03 11:00:00', 2),
-(5, 'Николай', '2020-09-03 10:00:00', 3),
-(6, 'Иван', '2020-09-03 11:00:00', 3),
-(7, 'Ban', '2020-09-03 12:00:00', 1),
-(8, 'Karl', '2020-09-03 13:00:00', 1),
-(9, 'Dan', '2020-09-03 14:00:00', 1),
-(10, 'dfsdf', '2020-09-03 15:00:00', 1),
-(11, 'Van', '2020-09-03 16:00:00', 1),
-(12, NULL, '2020-09-03 17:00:00', 1),
-(13, NULL, '2020-09-03 18:00:00', 1),
-(14, NULL, '2020-09-03 19:00:00', 1),
-(15, 'safdf', '2020-09-03 12:00:00', 2),
-(16, 'asfd', '2020-09-03 13:00:00', 2),
-(17, 'dddddddddddddddd', '2020-09-03 14:00:00', 2),
-(18, 'lksdfkljsdklfj', '2020-09-03 15:00:00', 2),
-(19, 'Abrams', '2020-09-03 16:00:00', 2),
-(20, NULL, '2020-09-03 17:00:00', 2),
-(21, NULL, '2020-09-03 18:00:00', 2),
-(22, NULL, '2020-09-03 19:00:00', 2),
-(23, NULL, '2020-09-03 12:00:00', 3),
-(24, NULL, '2020-09-03 13:00:00', 3),
-(25, NULL, '2020-09-03 14:00:00', 3),
-(26, NULL, '2020-09-03 15:00:00', 3),
-(27, 'Сергей', '2020-09-03 16:00:00', 3),
-(28, NULL, '2020-09-03 17:00:00', 3),
-(29, NULL, '2020-09-03 18:00:00', 3),
-(30, NULL, '2020-09-03 19:00:00', 3);
+-- ALTER TABLE `exam_events` ADD CONSTRAINT `Appointments_fk0` FOREIGN KEY (`event_id`) REFERENCES `Events`(`id`);
 
 
-insert into dkappointments.categories (name, code, description)
-values ('Образование','edu','Востребованные предложения для образования');
 
-insert into dkappointments.categories (name, code, description)
-values ('Здоровье','health','Предложения по лечению, улучшению здоровья');
-
-insert into dkappointments.categories (name, code, description)
-values ('Досуг','leisure','Предложения для проведения свободного времени');
 
