@@ -14,14 +14,14 @@ class AHController
 
 
 {
-//    public function events(Request $request)
-//    {
-//        $events = \App\AHevent::select('Name', 'Description', 'Id')->get();
-//        $appointments = \App\AHappointment::select('Name', 'date', 'Id')->get();
-//        return view('AH/events', ['events' => $events, 'appointments' => $appointments, ]);
-//    }
+   public function events(Request $request)
+   {
+        $events = \App\AHevent::select('Name', 'Description', 'Id')->get();
+        $appointments = \App\AHappointment::select('Id', 'Name', 'date')->get();
+        return view('AH/events', ['events' => $events, 'appointments' => $appointments, ]);
+    }
 
-    public function events(Request $request)
+    public function examlist(Request $request)
     {
         $events = \App\AHevent::find(1)->get();
         return view('AH/events', ['events'=> $events]);
@@ -29,7 +29,7 @@ class AHController
 
     public function chosenExam($id){
        $appointments = \App\AHevent::find($id)->appointments;
-        $appointments = \App\AHappointment::where('ahevents_id', '=', $id)->select('Name', 'Id')->get();
+        $appointments = \App\AHappointment::where('ahevents_id', '=', $id)->select('Name', 'Id', 'date')->get();
         return view('AH/appointments', ['data' => $appointments]);
     }
 
@@ -39,7 +39,7 @@ class AHController
 
 //        $appointments = \App\AHappointment::query()->where('Id', $id)->update(['Name' => $userName]);
 
-        $appointments = \App\AHappointment::where('Id', $id)->update(['Name' => $userName]); // так правильнее, вроде бы
+        $appointments = \App\AHappointment::where('Id', $id)->update(['Name' => $userName]);
 //        $a = array($id, $Name);
 //        return $a;
         return redirect()->back();
