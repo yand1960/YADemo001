@@ -112,7 +112,7 @@ return [
             'driver' => 'mysql',
             'host' => '192.168.1.15',
             'port' => '3306',
-            'database' => 'ah',
+            'database' => 'ah_appointments',
             'username' => 'exams',
             'password' => 'Pa$$w0rd',
             'charset' => 'utf8mb4',
