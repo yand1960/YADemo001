@@ -11,7 +11,7 @@
                     <p class="lead text-white">Веб-приложение для создания записи на экзамен</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="img/event.jpg" alt="event">
+                    <img src="https://www.lancasterguardian.co.uk/images-i.jpimedia.uk/imagefetch/https://jpgreatcontent.co.uk/wp-content/uploads/2019/12/shutterstock_502856116.jpg?crop=982:524,smart&width=640" alt="event">
                 </div>
             </div>
         </div>

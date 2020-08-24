@@ -50,7 +50,7 @@ Route::get('/dk/events', [
     'as' => 'events.index'
 ]);
 
-Route::get('/dk', [
+Route::get('/dk/', [
     'uses' => 'DKDashboardController@index',
     'as' => 'dashboard.index'
 ]);
@@ -60,7 +60,7 @@ Route::get('/dk/events/create', [
     'as' => 'events.create'
 ]);
 
-Route::post('dk/events', [
+Route::post('/dk/events', [
     'uses' => 'DKEventController@store',
     'as' => 'events.store'
 ]);
@@ -76,7 +76,7 @@ Route::post('/dk/events/{event}', [
     'as' => 'events.update'
 ]);
 
-Route::delete('dk/events/{event}', [
+Route::delete('/dk/events/{event}', [
     'uses' => 'DKEventController@destroy',
     'as' => 'events.delete'
 ]);

@@ -47,13 +47,13 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">
+                        <a class="nav-link" href="/dk/">
                             <i class="fa fa-home"></i>
                             Дашборд <span class="sr-only"></span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/events">
+                        <a class="nav-link" href="/dk/events">
                             <i class="fa fa-calendar"></i>
                             Мероприятия
                         </a>
