@@ -1,0 +1,49 @@
+Адрес хоста: 	    	tavanix.ru
+Имя базы данных: 	    a0445516_games
+Пользователь: 	    	a0445516_games
+Пароль: 	            games
+
+
+______________________________________________
+
+
+create database if not exists a0445516_games;
+
+CREATE TABLE `a0445516_games`.`events` (
+  `id` INT NOT NULL,
+  `eventTitle` VARCHAR(45) NOT NULL,
+  `eventDescription` VARCHAR(150) NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `a0445516_games`.`appointments` (
+  `id` INT NOT NULL,
+  `user` VARCHAR(45) NOT NULL,
+  `appointmentDate` DATE NOT NULL,
+  `event_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `event_id`));
+
+______________________________________________
+
+insert into events (id, eventTitle, eventDescription) values
+(1, 'Halo Infinite', 'Halo Infinite is an upcoming first-person shooter game developed by 343 Industries and published by Xbox Game Studios for Windows, Xbox One, and Xbox Series X/S.'),
+(2, 'Biomutant', 'BIOMUTANT® is an open-world, post-apocalyptic Kung-Fu fable RPG, with a unique martial arts styled combat system allowing you to mix melee, shooting and mutant ability action. 2021. Experiment 101. THQ Nordic'),
+(3, 'Far Cry 6', 'Far Cry 6 is an upcoming first-person shooter game developed by Ubisoft Toronto and published by Ubisoft. It is the sixth main installment of the Far Cry series for Amazon Luna, Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S, and Stadia'),
+(4, 'Overwatch 2', 'Overwatch 2 will feature both new PvE and PvP modes. An example of the former is Story Experience.[1] An example of the latter is Push. '),
+(5, 'Grand Theft Auto 6', 'Grand Theft Auto IV is a 2008 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the first main entry in the Grand Theft Auto series since 2004 Grand Theft Auto: San Andreas'),
+(6, 'Sniper: Ghost Warrior Contracts 2', 'Sniper: Ghost Warrior Contracts is a tactical shooter video game developed and published by CI Games. It is the fifth game of the Sniper: Ghost Warrior series and is the sequel to Sniper: Ghost Warrior 3. '),
+(7, 'Outriders', 'Outriders is an upcoming third-person shooter developed by People Can Fly and published by Square Enix. It is set to be released on February 2, 2021 for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S. It will also release on Stadia later in 2021'),
+(8, 'Scavengers', 'Scavengers is your strategic survival battleground. Enter a free-to-play action shooter where squads of three compete to survive and dominate in a hybrid of sandbox-style PVE and class-based PVP.'),
+(9, 'Werewolf: The Apocalypse – Earthblood', 'Werewolf: The Apocalypse – Earthblood is an upcoming action role-playing video game developed by Cyanide and published by Nacon. It is based on White Wolf Publishing tabletop role-playing game Werewolf: The Apocalypse, and is part of the larger World of Darkness series'),
+(10, 'The Medium', 'The Medium is an upcoming psychological horror video game developed by Bloober Team, scheduled to be released for Microsoft Windows and Xbox Series X/S on 28 January 2021');
+
+
+insert into appointments (id, user, appointmentDate, event_id) values
+('1', 'Maksim', '2021-03-15', '1'),
+('2', '', '2021-02-05', '2'),
+('3', '', '2021-04-30', '5'),
+('4', '', '2021-04-15', '8'),
+('5', '', '2021-05-21', '10'),
+('6', '', '2021-07-18', '7'),
+('7', '', '2021-08-22', '3');
+
+______________________________________________
