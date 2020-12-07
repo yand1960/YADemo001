@@ -124,3 +124,5 @@ Route::get("/vs/examList/makeAppointment","VSController@makeAppointment");
 Route::get('/ma/hello', function(){
     return "Hello, this is Maksim";
 });
+
+Route::get('/ma/events', [maController::class, 'getEvents']);
