@@ -125,4 +125,5 @@ Route::get('/ma/hello', function(){
     return "Hello, this is Maksim";
 });
 
-Route::get('/ma/events', [maController::class, 'getEvents']);
+Route::get('/ma/test', [maController::class, 'test']);
+Route::get('/ma/events', [maController::class, 'eventList']);
