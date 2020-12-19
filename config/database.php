@@ -190,9 +190,9 @@ return [
             'driver' => 'mysql',
             'host' => 'tavanix.ru',
             'port' => '3306',
-            'database' => 'a0445516_games',
-            'username' => 'a0445516_games',
-            'password' => 'games',
+            'database' => 'a0445516_movies',
+            'username' => 'a0445516_movies',
+            'password' => 'movies',
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
@@ -201,7 +201,7 @@ return [
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
-        ]
+        ],
 
 
     ],
