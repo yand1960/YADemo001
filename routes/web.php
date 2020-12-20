@@ -117,3 +117,10 @@ Route::get("/vs/examList","VSController@examList");
 Route::get("/vs/examList/chosenExam/{id}","VSController@chosenExam");
 
 Route::get("/vs/examList/makeAppointment","VSController@makeAppointment");
+
+
+//////////////// MAKSIM AISIN ////////////////////////
+
+Route::get("/ma/movies", "maController@movieList");
+Route::get("/ma/movies/selectedMovie/{id}","maController@selectedMovie");
+Route::get("/ma/movies/reserveVisit","maController@reserveVisit");
