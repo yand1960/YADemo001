@@ -89,6 +89,8 @@
                     <a href="derevoxp">DV</a>
                     <a href="ah/events">AH</a>
                     <a href="vs/examList">VS</a>
+                    <a href="dk">DK</a>
+                    <a href="ma/movies">MA</a>
 					<!--
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
