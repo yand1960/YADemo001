@@ -121,6 +121,6 @@ Route::get("/vs/examList/makeAppointment","VSController@makeAppointment");
 
 //////////////// MAKSIM AISIN ////////////////////////
 
-Route::get("/ma/movies", [maController::class, 'movieList']);
-Route::get("/ma/movies/selectedMovie/{id}",[maController::class, 'selectedMovie']);
-Route::get("/ma/movies/reserveVisit",[maController::class, 'reserveVisit']);
+Route::get("/ma/movies", "maController@movieList");
+Route::get("/ma/movies/selectedMovie/{id}","maController@selectedMovie");
+Route::get("/ma/movies/reserveVisit","maController@reserveVisit");
