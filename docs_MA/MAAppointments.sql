@@ -27,13 +27,15 @@ SET time_zone = "+00:00";
 
 CREATE DATABASE IF NOT EXISTS a0445516_movies;
 
+USE a0445516_movies;
+
 -- --------------------------------------------------------
 
 --
 -- Структура таблицы `maAppointments`
 --
 
-CREATE TABLE IF NOT EXISTS `maAppointments` (
+CREATE TABLE if not exists maAppointments (
   `id` int(11) NOT NULL,
   `user` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `appointmentDate` datetime NOT NULL,
@@ -91,20 +93,19 @@ INSERT INTO `maEvents` (`id`, `eventName`, `eventDescription`, `eventImage`) VAL
 
 --
 -- Индексы сохранённых таблиц
---
 
+COMMIT;
 --
 -- Индексы таблицы `maAppointments`
 --
-ALTER TABLE `maAppointments`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `maAppointments_fk0` (`maEvent_id`);
+ALTER TABLE `maAppointments` ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `maAppointments` ADD KEY `maAppointments_fk0` (`maEvent_id`);
 
 --
 -- Индексы таблицы `maEvents`
 --
-ALTER TABLE `maEvents`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `maEvents` ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -113,14 +114,12 @@ ALTER TABLE `maEvents`
 --
 -- AUTO_INCREMENT для таблицы `maAppointments`
 --
-ALTER TABLE `maAppointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+ALTER TABLE `maAppointments` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблицы `maEvents`
 --
-ALTER TABLE `maEvents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `maEvents` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -129,8 +128,7 @@ ALTER TABLE `maEvents`
 --
 -- Ограничения внешнего ключа таблицы `maAppointments`
 --
-ALTER TABLE `maAppointments`
-  ADD CONSTRAINT `maAppointments_fk0` FOREIGN KEY (`maEvent_id`) REFERENCES `maEvents` (`id`);
+ALTER TABLE `maAppointments` ADD CONSTRAINT `maAppointments_fk0` FOREIGN KEY (`maEvent_id`) REFERENCES `maEvents` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
